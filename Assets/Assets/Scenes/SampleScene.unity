@@ -1811,6 +1811,10 @@ PrefabInstance:
     - target: {fileID: 8592730055715483824, guid: e7fbb376593cff24f9db4ecf8d465aaf, type: 3}
       propertyPath: _updateAfter
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8592730055715483824, guid: e7fbb376593cff24f9db4ecf8d465aaf, type: 3}
+      propertyPath: _iModifyDataFromSourceMono
+      value: 
       objectReference: {fileID: 1615367820}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
