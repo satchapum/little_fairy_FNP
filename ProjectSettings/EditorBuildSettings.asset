@@ -4,7 +4,19 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Assets/Scenes/Bathroom.unity
+    guid: f968eb50b4fcd8b48bc3fd5ca3f9abea
+  - enabled: 1
+    path: Assets/Assets/Scenes/Bedroom.unity
+    guid: df3ed12f6735ab84683831873cb0c1c6
+  - enabled: 1
+    path: Assets/Assets/Scenes/BedroomMainMenu.unity
+    guid: 36f6adc323f1d7a4caa3ca3dee95d1ad
+  - enabled: 1
+    path: Assets/Assets/Scenes/Kitchen.unity
+    guid: 44eb0a03a5e4ac64f9d399581d65b083
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 88870e453f082a744b57c6f8c8491407, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 7e3a98191c45ca24cb15edf4b6c5689e, type: 2}
