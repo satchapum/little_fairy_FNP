@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class FadeScene : MonoBehaviour
 {
     [SerializeField] private CanvasGroup canvasGroup;
+    [SerializeField] string sceneToChangeName;
     private Tween fadeTween;
 
     public void DoFadeAndChangeScene()
@@ -51,7 +52,7 @@ public class FadeScene : MonoBehaviour
         // Add sound here
         //
         FadeOut(1f);
-        SceneManager.LoadScene("Bedroom");
+        SceneManager.LoadScene(sceneToChangeName);
     }
 
 

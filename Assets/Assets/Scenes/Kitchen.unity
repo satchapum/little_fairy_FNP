@@ -305,7 +305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 227625658}
   m_Layer: 0
-  m_Name: GrabbleItem
+  m_Name: Grabble Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -430,7 +430,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 7891779296415825867, guid: 71b5902273e9f1948973a83af3f33e2c, type: 3}
 --- !u!114 &304483498
@@ -737,7 +737,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8986237552638331582, guid: dc410aada0ee89b4fb9cd7266dbd7e64, type: 3}
 --- !u!114 &351839019
@@ -1444,7 +1444,7 @@ GameObject:
   m_Component:
   - component: {fileID: 764111785}
   m_Layer: 0
-  m_Name: WallGroup
+  m_Name: Wall Group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1937,7 +1937,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8986237552638331582, guid: dc410aada0ee89b4fb9cd7266dbd7e64, type: 3}
 --- !u!114 &904213432
@@ -2164,7 +2164,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 7891779296415825867, guid: 3fbf924a0c973ef48b04b97fec335e71, type: 3}
 --- !u!54 &930499504
@@ -3098,7 +3098,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8986237552638331582, guid: dc410aada0ee89b4fb9cd7266dbd7e64, type: 3}
 --- !u!114 &1584250691
@@ -4174,7 +4174,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8986237552638331582, guid: dc410aada0ee89b4fb9cd7266dbd7e64, type: 3}
 --- !u!114 &2087101600
