@@ -1,23 +1,41 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using CodeMonkey.Utils;
 
 public class DishWashScript : MonoBehaviour
 {
     [Header("In this game object")]
-    [SerializeField] Texture2D dirtMaskBase;
-    [SerializeField] Texture2D brush;
+    [SerializeField] private Texture2D _dirtMaskBase;
+    [SerializeField] private Texture2D _brush;
 
-    [SerializeField] Material material;
+    [SerializeField] private Material _material;
+    
+    private Texture2D _templateDirtMask;
+    private float dirtAmountTotal;
+    public float dirtAmount;
 
     [Header("From other gameobject")]
     [SerializeField] SpongeRayCast spongeRayCast;
 
-    Texture2D templateDirtMask;
 
-    void Start()
+    void Awake()
     {
         CreateTexture();
+
+        dirtAmountTotal = 0f;
+        for (int x = 0; x < _dirtMaskBase.width; x++)
+        {
+            for (int y = 0; y < _dirtMaskBase.height; y++)
+            {
+                dirtAmountTotal += _dirtMaskBase.GetPixel(x, y).g;
+            }
+        }
+        dirtAmount = dirtAmountTotal;
+
+        FunctionPeriodic.Create(() => {
+            GetDirtAmount();
+        }, .03f);
     }
 
     void Update()
@@ -25,38 +43,50 @@ public class DishWashScript : MonoBehaviour
         if (spongeRayCast.IsHit && spongeRayCast.hitObject == this.gameObject)
         {
             Vector2 textureCoord = spongeRayCast.hitOut.textureCoord;
+            Debug.Log(textureCoord);
+            int pixelX = (int)(textureCoord.x * _templateDirtMask.width);
+            int pixelY = (int)(textureCoord.y * _templateDirtMask.height);
 
-            int pixelX = (int)(textureCoord.x * templateDirtMask.width);
-            int pixelY = (int)(textureCoord.y * templateDirtMask.height);
+            int pixelXOffset = pixelX - (_brush.width / 2);
+            int pixelYOffset = pixelY - (_brush.height / 2);
 
-            Vector2Int paintPixelPosition = new Vector2Int(pixelX, pixelY);
-
-            Debug.Log("UV: " + textureCoord + "; Pixels: " + paintPixelPosition);
-
-            for (int x = 0; x < brush.width; x++)
+            for (int x = 0; x < _brush.width; x++)
             {
-                for (int y = 0; y < brush.height; y++)
+                for (int y = 0; y < _brush.height; y++)
                 {
-                    Color pixelDirt = brush.GetPixel(x, y);
-                    Color pixelDirtMask = templateDirtMask.GetPixel(pixelX + x, pixelY + y);
+                    Color pixelDirt = _brush.GetPixel(x, y);
+                    Color pixelDirtMask = _templateDirtMask.GetPixel(pixelXOffset + x, pixelYOffset + y);
 
-                    templateDirtMask.SetPixel(pixelX + x, pixelY + y, new Color(0, pixelDirtMask.g * pixelDirt.g, 0));
+                    /*float removedAmount = pixelDirtMask.g - (pixelDirtMask.g * pixelDirt.g);
+                    dirtAmount -= removedAmount;*/
+
+                    _templateDirtMask.SetPixel(pixelXOffset + x,
+                        pixelYOffset + y,
+                        new Color(0, pixelDirtMask.g * pixelDirt.g, 0));
                 }
             }
-
-            templateDirtMask.Apply();
+                
+            _templateDirtMask.Apply();
         }
     }
 
     void CreateTexture()
     {
-        templateDirtMask = new Texture2D(dirtMaskBase.width, dirtMaskBase.height);
-        templateDirtMask.SetPixels(dirtMaskBase.GetPixels());
-        templateDirtMask.Apply();
+        _templateDirtMask = new Texture2D(_dirtMaskBase.width, _dirtMaskBase.height);
+        _templateDirtMask.SetPixels(_dirtMaskBase.GetPixels());
+        _templateDirtMask.Apply();
 
-        material.SetTexture("DirtTexture", templateDirtMask);
+        _material.SetTexture("_DirtMask", _templateDirtMask);
     }
-}*/
+
+    private float GetDirtAmount()
+    {
+        return this.dirtAmount / dirtAmountTotal;
+    }
+
+}
+
+/*
 using System;
 using UnityEngine;
 
@@ -87,29 +117,33 @@ public class DishWashScript : MonoBehaviour
                 int pixelX = (int)(textureCoord.x * _templateDirtMask.width);
                 int pixelY = (int)(textureCoord.y * _templateDirtMask.height);
 
+                int pixelXOffset = pixelX - (_brush.width / 2);
+                int pixelYOffset = pixelY - (_brush.height / 2);
+
                 for (int x = 0; x < _brush.width; x++)
                 {
                     for (int y = 0; y < _brush.height; y++)
                     {
                         Color pixelDirt = _brush.GetPixel(x, y);
-                        Color pixelDirtMask = _templateDirtMask.GetPixel(pixelX + x, pixelY + y);
+                        Color pixelDirtMask = _templateDirtMask.GetPixel(pixelXOffset + x, pixelYOffset + y);
 
-                        _templateDirtMask.SetPixel(pixelX + x,
-                            pixelY + y,
+                        _templateDirtMask.SetPixel(pixelXOffset + x,
+                            pixelYOffset + y,
                             new Color(0, pixelDirtMask.g * pixelDirt.g, 0));
                     }
                 }
-
+                
                 _templateDirtMask.Apply();
-
-            }
-        }
-        dirtAmountTotal = 0;
-        for (int x = 0;x < _dirtMaskBase.width; x++)
-        {
-            for(int y= 0; y< _dirtMaskBase.height; y++)
-            {
-                dirtAmountTotal += (int)_dirtMaskBase.GetPixel(x,y).g;
+                
+                dirtAmountTotal = 0;
+                for (int x = 0; x < _dirtMaskBase.width; x++)
+                {
+                    for (int y = 0; y < _dirtMaskBase.height; y++)
+                    {
+                        dirtAmountTotal += (int)_dirtMaskBase.GetPixel(x, y).g;
+                    }
+                }
+                
             }
         }
 
@@ -121,6 +155,7 @@ public class DishWashScript : MonoBehaviour
         _templateDirtMask.SetPixels(_dirtMaskBase.GetPixels());
         _templateDirtMask.Apply();
 
-        _material.SetTexture("DirtTexture", _templateDirtMask);
+        _material.SetTexture("_DirtMask", _templateDirtMask);
     }
 }
+*/

@@ -8,18 +8,23 @@ public class SpongeRayCast : MonoBehaviour
     public bool IsHit = false;
     public GameObject hitObject;
 
-    void Update()
-    {
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, 10f))
-        {
-            hitOut = hit;
-            IsHit = true;
-            hitObject = hit.collider.gameObject;
 
-        }
-        else
+    void FixedUpdate()
+    {
+        if (transform.hasChanged)
         {
-            IsHit = false;
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, 0.1f))
+            {
+                hitOut = hit;
+                IsHit = true;
+                hitObject = hit.collider.gameObject;
+            }
+            else
+            {
+                IsHit = false;
+            }
+            
         }
+        transform.hasChanged = false;
     }
 }
