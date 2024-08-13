@@ -11,11 +11,9 @@ public class FruitTargetScript
 
 public class CheckFruitScript : MonoBehaviour
 {
-    [SerializeField] ListOfFruitScript listOfFruit;
     [SerializeField] List<FruitTargetScript> fruitTargetAndAmountOfFruit = new List<FruitTargetScript>();
 
     private int currentAmoutOfFruitTarget = 0;
-    private List<GameObject> listOfFruitGameobject;
 
     public bool IsNoFruit = false;
 
@@ -23,7 +21,6 @@ public class CheckFruitScript : MonoBehaviour
     {
         UpdateCurrentAmoutOfFruitTarget();
 
-        listOfFruitGameobject = listOfFruit.listOfFruitGameobject;
     }
 
     private void UpdateCurrentAmoutOfFruitTarget()

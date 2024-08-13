@@ -88,7 +88,7 @@ public class DishWashScript : MonoBehaviour
 
     private float GetDirtAmount()
     {
-        return dirtAmount / dirtAmountTotal;
+        return dirtAmount / (dirtAmountTotal);
     }
 
     private float CalculateDirtAmount(Texture2D texture)
