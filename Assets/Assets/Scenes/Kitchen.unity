@@ -385,7 +385,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5076798556035486163, guid: 01a9b09b7c6092646a77dc28b7a129fc, type: 3}
 --- !u!114 &127768251
@@ -403,7 +403,7 @@ MonoBehaviour:
   _dirtMaskBase: {fileID: 2800000, guid: 80977c2d4443aa7408ae9919a237185f, type: 3}
   _brush: {fileID: 2800000, guid: f21f8f7ed07517a4091a0c86a4ce3a77, type: 3}
   _material: {fileID: 2100000, guid: 7dce92406b7b1014a9f3d5b8292f5c41, type: 2}
-  dirtAmount: 0
+  dirtAmountPercentage: 0
   spongeRayCast: {fileID: 1327153899}
 --- !u!1001 &136069785
 PrefabInstance:
