@@ -13,7 +13,7 @@ public class SpongeRayCast : MonoBehaviour
     {
         if (transform.hasChanged)
         {
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, 0.1f))
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, 10f))
             {
                 hitOut = hit;
                 IsHit = true;
