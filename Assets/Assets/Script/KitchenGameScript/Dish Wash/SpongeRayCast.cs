@@ -8,12 +8,14 @@ public class SpongeRayCast : MonoBehaviour
     public bool IsHit = false;
     public GameObject hitObject;
 
+    [SerializeField] LayerMask layerMask;
+    [SerializeField] float distanceToWash = 0.05f;
 
     void FixedUpdate()
     {
         if (transform.hasChanged)
         {
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, 10f))
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, distanceToWash, layerMask))
             {
                 hitOut = hit;
                 IsHit = true;
