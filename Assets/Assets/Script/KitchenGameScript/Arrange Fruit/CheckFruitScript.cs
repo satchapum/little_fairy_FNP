@@ -15,7 +15,7 @@ public class CheckFruitScript : ArrangeScript
 
     private int currentAmoutOfFruitTarget = 0;
 
-    public bool IsNoFruit = false;
+    public bool isNoFruit = false;
 
 
     public override void Start()
@@ -38,11 +38,11 @@ public class CheckFruitScript : ArrangeScript
     {
         if (currentAmoutOfFruitTarget == 0)
         {
-            IsNoFruit = true;
+            isNoFruit = true;
         }
         else
         {
-            IsNoFruit = false;
+            isNoFruit = false;
         }
     }
 

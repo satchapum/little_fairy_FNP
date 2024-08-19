@@ -15,7 +15,7 @@ public class CheckBookScipt : ArrangeScript
 
     private int currentAmoutOfBookTarget = 0;
 
-    public bool IsNoBook = false;
+    public bool isNoBook = false;
 
 
     public override void Start()
@@ -38,11 +38,11 @@ public class CheckBookScipt : ArrangeScript
     {
         if (currentAmoutOfBookTarget == 0)
         {
-            IsNoBook = true;
+            isNoBook = true;
         }
         else
         {
-            IsNoBook = false;
+            isNoBook = false;
         }
     }
 
@@ -60,19 +60,22 @@ public class CheckBookScipt : ArrangeScript
     {
         for (int numberOfBookTarget = 0; numberOfBookTarget < bookTargetAndAmountOfBook.Count; numberOfBookTarget++)
         {
-            if (bookCollider.gameObject.GetComponent<BookScript>().bookName == bookTargetAndAmountOfBook[numberOfBookTarget].bookName)
+            if (bookCollider.gameObject.GetComponent<BookScript>() != null)
             {
-                if (IsEnter == true)
+                if (bookCollider.gameObject.GetComponent<BookScript>().bookName == bookTargetAndAmountOfBook[numberOfBookTarget].bookName)
                 {
-                    bookTargetAndAmountOfBook[numberOfBookTarget].amountOfBook -= 1;
-                }
-                else
-                {
-                    bookTargetAndAmountOfBook[numberOfBookTarget].amountOfBook += 1;
-                }
+                    if (IsEnter == true)
+                    {
+                        bookTargetAndAmountOfBook[numberOfBookTarget].amountOfBook -= 1;
+                    }
+                    else
+                    {
+                        bookTargetAndAmountOfBook[numberOfBookTarget].amountOfBook += 1;
+                    }
 
-                UpdateCurrentAmoutOfTarget();
-                break;
+                    UpdateCurrentAmoutOfTarget();
+                    break;
+                }
             }
         }
     }

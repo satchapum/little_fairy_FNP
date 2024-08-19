@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpongeRayCast : MonoBehaviour
 {
     public RaycastHit hitOut;
-    public bool IsHit = false;
+    public bool isHit = false;
     public GameObject hitObject;
 
     [SerializeField] LayerMask layerMask;
@@ -18,12 +18,12 @@ public class SpongeRayCast : MonoBehaviour
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, distanceToWash, layerMask))
             {
                 hitOut = hit;
-                IsHit = true;
+                isHit = true;
                 hitObject = hit.collider.gameObject;
             }
             else
             {
-                IsHit = false;
+                isHit = false;
             }
             
         }
