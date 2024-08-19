@@ -9,7 +9,7 @@ public class FruitTargetScript
     public int amountOfFruit;
 }
 
-public class CheckFruitScript : MonoBehaviour
+public class CheckFruitScript : ArrangeScript
 {
     [SerializeField] List<FruitTargetScript> fruitTargetAndAmountOfFruit = new List<FruitTargetScript>();
 
@@ -17,13 +17,13 @@ public class CheckFruitScript : MonoBehaviour
 
     public bool IsNoFruit = false;
 
-    void Start()
-    {
-        UpdateCurrentAmoutOfFruitTarget();
 
+    public override void Start()
+    {
+        UpdateCurrentAmoutOfTarget();
     }
 
-    private void UpdateCurrentAmoutOfFruitTarget()
+    public override void UpdateCurrentAmoutOfTarget()
     {
         currentAmoutOfFruitTarget = 0;
         for (int typeOfFruit = 0; typeOfFruit < fruitTargetAndAmountOfFruit.Count; typeOfFruit++)
@@ -31,10 +31,10 @@ public class CheckFruitScript : MonoBehaviour
             currentAmoutOfFruitTarget += fruitTargetAndAmountOfFruit[typeOfFruit].amountOfFruit;
         }
 
-        CheckIsNoFruit();
+        CheckIsNoTarget();
     }
 
-    private void CheckIsNoFruit()
+    public override void CheckIsNoTarget()
     {
         if (currentAmoutOfFruitTarget == 0)
         {
@@ -46,17 +46,17 @@ public class CheckFruitScript : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider fruitCollider)
+    public override void OnTriggerEnter(Collider fruitCollider)
     {
         actionWhenCollider(true, fruitCollider);
     }
 
-    private void OnTriggerExit(Collider fruitCollider)
+    public override void OnTriggerExit(Collider fruitCollider)
     {
         actionWhenCollider(false, fruitCollider);
     }
 
-    private void actionWhenCollider(bool IsEnter, Collider fruitCollider)
+    public override void actionWhenCollider(bool IsEnter, Collider fruitCollider)
     {
         for (int numberOfFruitTarget = 0; numberOfFruitTarget < fruitTargetAndAmountOfFruit.Count; numberOfFruitTarget++)
         {
@@ -70,8 +70,8 @@ public class CheckFruitScript : MonoBehaviour
                 {
                     fruitTargetAndAmountOfFruit[numberOfFruitTarget].amountOfFruit += 1;
                 }
-                    
-                UpdateCurrentAmoutOfFruitTarget();
+
+                UpdateCurrentAmoutOfTarget();
                 break;
             }
         }
