@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class BookTargetScript
 {
     public string bookName;
@@ -25,9 +26,9 @@ public class CheckBookScipt : ArrangeScript
     public override void UpdateCurrentAmoutOfTarget()
     {
         currentAmoutOfBookTarget = 0;
-        for (int typeOfFruit = 0; typeOfFruit < bookTargetAndAmountOfBook.Count; typeOfFruit++)
+        for (int typeOfBook = 0; typeOfBook < bookTargetAndAmountOfBook.Count; typeOfBook++)
         {
-            currentAmoutOfBookTarget += bookTargetAndAmountOfBook[typeOfFruit].amountOfBook;
+            currentAmoutOfBookTarget += bookTargetAndAmountOfBook[typeOfBook].amountOfBook;
         }
 
         CheckIsNoTarget();
@@ -45,21 +46,21 @@ public class CheckBookScipt : ArrangeScript
         }
     }
 
-    public override void OnTriggerEnter(Collider fruitCollider)
+    public override void OnTriggerEnter(Collider bookCollider)
     {
-        actionWhenCollider(true, fruitCollider);
+        actionWhenCollider(true, bookCollider);
     }
 
-    public override void OnTriggerExit(Collider fruitCollider)
+    public override void OnTriggerExit(Collider bookCollider)
     {
-        actionWhenCollider(false, fruitCollider);
+        actionWhenCollider(false, bookCollider);
     }
 
-    public override void actionWhenCollider(bool IsEnter, Collider fruitCollider)
+    public override void actionWhenCollider(bool IsEnter, Collider bookCollider)
     {
         for (int numberOfBookTarget = 0; numberOfBookTarget < bookTargetAndAmountOfBook.Count; numberOfBookTarget++)
         {
-            if (fruitCollider.gameObject.GetComponent<FruitScript>().fruitName == bookTargetAndAmountOfBook[numberOfBookTarget].bookName)
+            if (bookCollider.gameObject.GetComponent<BookScript>().bookName == bookTargetAndAmountOfBook[numberOfBookTarget].bookName)
             {
                 if (IsEnter == true)
                 {
