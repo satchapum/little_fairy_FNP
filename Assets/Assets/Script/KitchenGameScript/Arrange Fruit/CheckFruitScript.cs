@@ -46,7 +46,7 @@ public class CheckFruitScript : ArrangeScript
         }
         else
         {
-            currentTargetText.text = "The book left\n" + currentAmoutOfFruitTarget;
+            currentTargetText.text = "The Fruit left\n" + currentAmoutOfFruitTarget;
             isNoFruit = false;
         }
     }
