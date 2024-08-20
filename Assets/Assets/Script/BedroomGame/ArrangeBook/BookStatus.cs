@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BookStatus : MonoBehaviour
 {
-    [SerializeField] bool isBookOnGrab;
+    [SerializeField] public bool isBookOnGrab;
 
     public void SetBookOnGrab()
     {

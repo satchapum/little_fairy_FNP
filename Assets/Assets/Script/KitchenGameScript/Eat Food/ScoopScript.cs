@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ScoopScript : MonoBehaviour
 {
-    [SerializeField] Collider _collider;
     [SerializeField] SpoonChange mainSpoon;
     [SerializeField] GameObject foodTarget;
 

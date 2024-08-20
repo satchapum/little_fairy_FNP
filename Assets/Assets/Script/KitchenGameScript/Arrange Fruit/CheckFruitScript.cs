@@ -60,19 +60,22 @@ public class CheckFruitScript : ArrangeScript
     {
         for (int numberOfFruitTarget = 0; numberOfFruitTarget < fruitTargetAndAmountOfFruit.Count; numberOfFruitTarget++)
         {
-            if (fruitCollider.gameObject.GetComponent<FruitScript>().fruitName == fruitTargetAndAmountOfFruit[numberOfFruitTarget].fruitName)
+            if (fruitCollider.gameObject.GetComponent<FruitScript>() != null)
             {
-                if (IsEnter == true)
+                if (fruitCollider.gameObject.GetComponent<FruitScript>().fruitName == fruitTargetAndAmountOfFruit[numberOfFruitTarget].fruitName)
                 {
-                    fruitTargetAndAmountOfFruit[numberOfFruitTarget].amountOfFruit -= 1;
-                }
-                else
-                {
-                    fruitTargetAndAmountOfFruit[numberOfFruitTarget].amountOfFruit += 1;
-                }
+                    if (IsEnter == true)
+                    {
+                        fruitTargetAndAmountOfFruit[numberOfFruitTarget].amountOfFruit -= 1;
+                    }
+                    else
+                    {
+                        fruitTargetAndAmountOfFruit[numberOfFruitTarget].amountOfFruit += 1;
+                    }
 
-                UpdateCurrentAmoutOfTarget();
-                break;
+                    UpdateCurrentAmoutOfTarget();
+                    break;
+                }
             }
         }
     }
