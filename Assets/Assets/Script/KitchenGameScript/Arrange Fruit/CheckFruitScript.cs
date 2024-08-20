@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 [System.Serializable]
 public class FruitTargetScript
@@ -11,6 +12,8 @@ public class FruitTargetScript
 
 public class CheckFruitScript : ArrangeScript
 {
+    [SerializeField] TMP_Text currentTargetText;
+
     [SerializeField] List<FruitTargetScript> fruitTargetAndAmountOfFruit = new List<FruitTargetScript>();
 
     private int currentAmoutOfFruitTarget = 0;
@@ -38,10 +41,12 @@ public class CheckFruitScript : ArrangeScript
     {
         if (currentAmoutOfFruitTarget == 0)
         {
+            currentTargetText.text = "FINISH";
             isNoFruit = true;
         }
         else
         {
+            currentTargetText.text = "The book left\n" + currentAmoutOfFruitTarget;
             isNoFruit = false;
         }
     }

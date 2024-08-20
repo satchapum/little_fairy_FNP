@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 [System.Serializable]
 public class BookTargetScript
 {
     public string bookName;
     public int amountOfBook;
+    
 }
 
 public class CheckBookScipt : ArrangeScript
 {
+    [SerializeField] TMP_Text currentTargetText;
+
     [SerializeField] List<BookTargetScript> bookTargetAndAmountOfBook = new List<BookTargetScript>();
 
     private int currentAmoutOfBookTarget = 0;
@@ -20,6 +24,7 @@ public class CheckBookScipt : ArrangeScript
 
     public override void Start()
     {
+
         UpdateCurrentAmoutOfTarget();
     }
 
@@ -36,12 +41,15 @@ public class CheckBookScipt : ArrangeScript
 
     public override void CheckIsNoTarget()
     {
+
         if (currentAmoutOfBookTarget == 0)
         {
+            currentTargetText.text = "FINISH";
             isNoBook = true;
         }
         else
         {
+            currentTargetText.text = "The book left\n" + currentAmoutOfBookTarget;
             isNoBook = false;
         }
     }

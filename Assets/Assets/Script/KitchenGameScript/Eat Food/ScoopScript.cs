@@ -19,10 +19,7 @@ public class ScoopScript : MonoBehaviour
         {
             consumable.Consume();
 
-            if (!consumable.IsFinished)
-            {
-                spoonChange.Consume();
-            }
+            spoonChange.Consume();
         }
     }
 }

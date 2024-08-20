@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Consumable : MonoBehaviour
 {
+    [SerializeField] TMP_Text canvasShowFinish;
+
     [SerializeField] GameObject[] portions;
     [SerializeField] int index = 0;
 
-    public bool IsFinished => index == portions.Length;
+    [SerializeField] public bool IsFinished => index == portions.Length-1;
 
     AudioSource _audioSource;
 
@@ -16,17 +19,28 @@ public class Consumable : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
         _audioSource.playOnAwake = false;
         Setvisual();
+        canvasShowFinish.text = "Not Finish";
+    }
+
+    private void Update()
+    {
+        if (IsFinished && SpoonChange.Instance.numberModelOfSpoon == 0)
+        {
+            canvasShowFinish.text = "Finish";
+        }
     }
 
     [ContextMenu("Consume")]
     public void Consume()
     {
-        index++;
+        
+        
         if (!IsFinished)
         {
-            
+            index++;
             Setvisual();
             _audioSource.Play();
+            canvasShowFinish.text = "Not Finish";
         }
     }
 

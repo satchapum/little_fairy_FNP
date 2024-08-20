@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpoonChange : MonoBehaviour
+public class SpoonChange : Singleton<SpoonChange>
 {
     [SerializeField] GameObject[] portions;
     [SerializeField] public int numberModelOfSpoon = 0;

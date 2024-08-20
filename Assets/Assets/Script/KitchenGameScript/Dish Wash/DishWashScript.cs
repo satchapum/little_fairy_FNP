@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using CodeMonkey.Utils;
+using TMPro;
 
 public class DishWashScript : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class DishWashScript : MonoBehaviour
     [SerializeField] private Texture2D _brush;
 
     [SerializeField] private Material _material;
+    [SerializeField] TMP_Text Showpercentage;
 
     private Texture2D _templateDirtMask;
     private float dirtAmountTotal;
@@ -29,6 +31,14 @@ public class DishWashScript : MonoBehaviour
         // Update dirtAmountPercentage periodically
         FunctionPeriodic.Create(() => {
             dirtAmountPercentage = GetDirtAmount() * 100f;
+            if (Mathf.RoundToInt(GetDirtAmount() * 100f) <= 15)
+            {
+                Showpercentage.text = "Finish";
+            }
+            else
+            {
+                Showpercentage.text = Mathf.RoundToInt(GetDirtAmount() * 100f) + "%";
+            }
         }, .03f);
     }
 
