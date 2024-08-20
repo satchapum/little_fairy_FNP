@@ -21,9 +21,10 @@ public class Consumable : MonoBehaviour
     [ContextMenu("Consume")]
     public void Consume()
     {
+        index++;
         if (!IsFinished)
         {
-            index++;
+            
             Setvisual();
             _audioSource.Play();
         }
