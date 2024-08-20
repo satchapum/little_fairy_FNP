@@ -798,8 +798,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &341003739
-MeshCollider:
+--- !u!114 &341003740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341003730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e36ea8ad804604ca8aea50a7b7c953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fruitName: Apple
+--- !u!135 &341003743
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -816,23 +829,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -4403386257471574379, guid: 88c8887b1c7a7ec40857cfe00eb8c511, type: 3}
---- !u!114 &341003740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 341003730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6e36ea8ad804604ca8aea50a7b7c953, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fruitName: Apple
+  serializedVersion: 3
+  m_Radius: 0.058080472
+  m_Center: {x: -0.0000000018626451, y: -0.000086624175, z: 0}
 --- !u!1001 &351839016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1121,9 +1120,6 @@ PrefabInstance:
       addedObject: {fileID: 1358494437}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 88c8887b1c7a7ec40857cfe00eb8c511, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1358494434}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 88c8887b1c7a7ec40857cfe00eb8c511, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1358494433}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 88c8887b1c7a7ec40857cfe00eb8c511, type: 3}
       insertIndex: -1
@@ -1137,6 +1133,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 88c8887b1c7a7ec40857cfe00eb8c511, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1358494429}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 88c8887b1c7a7ec40857cfe00eb8c511, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1358494440}
   m_SourcePrefab: {fileID: 100100000, guid: 88c8887b1c7a7ec40857cfe00eb8c511, type: 3}
 --- !u!1001 &423408073
 PrefabInstance:
@@ -1532,28 +1531,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &647749585
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 647749576}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2266936171950675019, guid: cf44c0783a6718f4b99e726c0022548c, type: 3}
 --- !u!114 &647749586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1608,6 +1585,27 @@ MonoBehaviour:
   _movementProvider: {fileID: 0}
   _handAligment: 1
   _handGrabPoses: []
+--- !u!135 &647749590
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647749576}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.07094321
+  m_Center: {x: -0.0000000037252903, y: -0.001308959, z: -0.0000000037252903}
 --- !u!1 &663563387
 GameObject:
   m_ObjectHideFlags: 0
@@ -1897,9 +1895,6 @@ PrefabInstance:
       addedObject: {fileID: 647749586}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cf44c0783a6718f4b99e726c0022548c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 647749585}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cf44c0783a6718f4b99e726c0022548c, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 647749584}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cf44c0783a6718f4b99e726c0022548c, type: 3}
       insertIndex: -1
@@ -1913,6 +1908,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cf44c0783a6718f4b99e726c0022548c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 647749587}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cf44c0783a6718f4b99e726c0022548c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 647749590}
   m_SourcePrefab: {fileID: 100100000, guid: cf44c0783a6718f4b99e726c0022548c, type: 3}
 --- !u!1 &854033946
 GameObject:
@@ -3929,8 +3927,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &1358494434
-MeshCollider:
+--- !u!114 &1358494437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358494427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e36ea8ad804604ca8aea50a7b7c953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fruitName: Apple
+--- !u!135 &1358494440
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3947,23 +3958,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -4403386257471574379, guid: 88c8887b1c7a7ec40857cfe00eb8c511, type: 3}
---- !u!114 &1358494437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1358494427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6e36ea8ad804604ca8aea50a7b7c953, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fruitName: Apple
+  serializedVersion: 3
+  m_Radius: 0.058080472
+  m_Center: {x: -0.0000000018626451, y: -0.000086624175, z: 0}
 --- !u!1 &1386948340 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4263034397251572646, guid: 38ff688d9fd698d479e740bd593946a2, type: 3}
@@ -4428,9 +4425,6 @@ PrefabInstance:
       addedObject: {fileID: 341003740}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 88c8887b1c7a7ec40857cfe00eb8c511, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 341003739}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 88c8887b1c7a7ec40857cfe00eb8c511, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 341003738}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 88c8887b1c7a7ec40857cfe00eb8c511, type: 3}
       insertIndex: -1
@@ -4444,6 +4438,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 88c8887b1c7a7ec40857cfe00eb8c511, type: 3}
       insertIndex: -1
       addedObject: {fileID: 341003734}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 88c8887b1c7a7ec40857cfe00eb8c511, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 341003743}
   m_SourcePrefab: {fileID: 100100000, guid: 88c8887b1c7a7ec40857cfe00eb8c511, type: 3}
 --- !u!1 &1506702164
 GameObject:
