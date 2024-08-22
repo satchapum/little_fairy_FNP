@@ -20,6 +20,7 @@ public class DishWashScript : MonoBehaviour
 
     [Header("From other gameobject")]
     [SerializeField] private SpongeRayCast spongeRayCast;
+    [SerializeField] GameObject poseToGoNextObject;
 
     private void Awake()
     {
@@ -34,6 +35,7 @@ public class DishWashScript : MonoBehaviour
             if (Mathf.RoundToInt(GetDirtAmount() * 100f) <= 15)
             {
                 Showpercentage.text = "Finish";
+                poseToGoNextObject.SetActive(true);
             }
             else
             {

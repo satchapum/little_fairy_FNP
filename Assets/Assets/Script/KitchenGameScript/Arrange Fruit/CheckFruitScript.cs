@@ -13,7 +13,7 @@ public class FruitTargetScript
 public class CheckFruitScript : ArrangeScript
 {
     [SerializeField] TMP_Text currentTargetText;
-
+    [SerializeField] GameObject poseToGoNextObject;
     [SerializeField] List<FruitTargetScript> fruitTargetAndAmountOfFruit = new List<FruitTargetScript>();
 
     private int currentAmoutOfFruitTarget = 0;
@@ -42,6 +42,7 @@ public class CheckFruitScript : ArrangeScript
         if (currentAmoutOfFruitTarget == 0)
         {
             currentTargetText.text = "FINISH";
+            poseToGoNextObject.SetActive(true);
             isNoFruit = true;
         }
         else

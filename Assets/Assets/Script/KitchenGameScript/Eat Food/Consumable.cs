@@ -6,11 +6,12 @@ using TMPro;
 public class Consumable : MonoBehaviour
 {
     [SerializeField] TMP_Text canvasShowFinish;
+    [SerializeField] GameObject poseToGoNextObject;
 
     [SerializeField] GameObject[] portions;
     [SerializeField] int index = 0;
 
-    [SerializeField] public bool IsFinished => index == portions.Length-1;
+    [SerializeField] public bool isFinished => index == portions.Length-1;
 
     AudioSource _audioSource;
 
@@ -24,9 +25,10 @@ public class Consumable : MonoBehaviour
 
     private void Update()
     {
-        if (IsFinished && SpoonChange.Instance.numberModelOfSpoon == 0)
+        if (isFinished && SpoonChange.Instance.numberModelOfSpoon == 0)
         {
             canvasShowFinish.text = "Finish";
+            poseToGoNextObject.SetActive(true);
         }
     }
 
@@ -35,7 +37,7 @@ public class Consumable : MonoBehaviour
     {
         
         
-        if (!IsFinished)
+        if (!isFinished)
         {
             index++;
             Setvisual();

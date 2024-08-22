@@ -475,7 +475,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 660923337}
-  sceneToChangeName: Bedroom0
   playerSO: {fileID: 11400000, guid: e1d48d2786ed49c478600da96f20d3d3, type: 2}
   poseToGoNextObject: {fileID: 1246481271}
 --- !u!4 &796600003

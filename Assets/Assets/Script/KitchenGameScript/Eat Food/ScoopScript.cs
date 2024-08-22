@@ -15,7 +15,7 @@ public class ScoopScript : MonoBehaviour
         SpoonChange spoonChange = mainSpoon.GetComponent<SpoonChange>();
 
         int spoonWithOutFood = 0;
-        if (consumable != null && !consumable.IsFinished && spoonChange.numberModelOfSpoon == spoonWithOutFood)
+        if (consumable != null && !consumable.isFinished && spoonChange.numberModelOfSpoon == spoonWithOutFood)
         {
             consumable.Consume();
 
