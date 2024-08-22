@@ -9,11 +9,38 @@ public class FadeScene : MonoBehaviour
 {
     [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] string sceneToChangeName;
+    [SerializeField] PlayerSO playerSO;
     private Tween fadeTween;
+
+    Scene currentScene;
+
+    public void Start()
+    {
+        currentScene = SceneManager.GetActiveScene();
+    }
 
     public void DoFadeAndChangeScene()
     {
-        StartCoroutine(DoWhenFade());
+        int currentMiniGame = GameManager.Instance.currentPlayerMiniGame;
+
+        if (currentMiniGame == 1)
+        {
+            DoFadeAndChangePosition();
+        }
+        else
+        {
+            StartCoroutine(DoWhenFade());
+        }
+    }
+
+    public void DoFadeAndChangeSceneMainMenu()
+    {
+        StartCoroutine(DoWhenFadeMainMenu());
+    }
+
+    public void DoFadeAndChangePosition()
+    {
+        StartCoroutine(DoWhenChangePosition());
     }
 
     public void FadeIn(float duration)
@@ -53,6 +80,30 @@ public class FadeScene : MonoBehaviour
         //
         FadeOut(1f);
         SceneManager.LoadScene(sceneToChangeName);
+    }
+    
+    private IEnumerator DoWhenFadeMainMenu()
+    {
+        playerSO.currentPlayerMiniGame = 0;
+        FadeIn(1f);
+        yield return new WaitForSeconds(3f);
+        //
+        // Add sound here
+        //
+        FadeOut(1f);
+        SceneManager.LoadScene(sceneToChangeName);
+    }
+
+    private IEnumerator DoWhenChangePosition()
+    {
+        playerSO.currentPlayerMiniGame = 0;
+        FadeIn(1f);
+        yield return new WaitForSeconds(3f);
+        //
+        // Add sound here
+        //
+        FadeOut(1f);
+        SpawnPosition.Instance.setPosition();
     }
 
 

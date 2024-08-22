@@ -1336,6 +1336,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasForVR (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 473526085924024561, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1542137038389174489, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1414,6 +1418,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1542137038389174489, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561198707278838558, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816964546624571293, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2406,6 +2418,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasForVR (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 473526085924024561, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1542137038389174489, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2484,6 +2500,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1542137038389174489, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561198707278838558, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816964546624571293, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8016448541873897116, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
@@ -4000,6 +4024,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasForVR
       objectReference: {fileID: 0}
+    - target: {fileID: 473526085924024561, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1542137038389174489, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4078,6 +4106,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1542137038389174489, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561198707278838558, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816964546624571293, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8016448541873897116, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}

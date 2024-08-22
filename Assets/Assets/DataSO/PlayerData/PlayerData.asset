@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48d7320da2bbef14e82964e2edbe6c0d, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  currentGameLevel: 0
-  currentStar: 0
-  currentPlayerMiniGame: 0
+  currentGameLevel: 1000
+  currentStar: 1000
+  currentPlayerMiniGame: 1

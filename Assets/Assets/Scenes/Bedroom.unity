@@ -1588,13 +1588,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424526414}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.37796548, z: -0, w: -0.9258197}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.779, y: 1.3, z: 0.191}
   m_LocalScale: {x: 0.14263, y: 0.14263, z: 0.14263}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 40858793}
-  m_LocalEulerAnglesHint: {x: 0, y: 315.585, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &424526417
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1930,7 +1930,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 791477825}
         m_TargetAssemblyTypeName: SaveLoadJSON, Assembly-CSharp
-        m_MethodName: SaveGame
+        m_MethodName: LoadGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1942,7 +1942,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 791477825}
         m_TargetAssemblyTypeName: SaveLoadJSON, Assembly-CSharp
-        m_MethodName: LoadGame
+        m_MethodName: SaveGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1958,18 +1958,6 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 532845407}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ChangeMiniGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 106149676}
         m_TargetAssemblyTypeName: FadeScene, Assembly-CSharp
         m_MethodName: DoFadeAndChangeScene
@@ -2054,17 +2042,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47e920aaffe6f3248a8daa4f3d24c007, type: 3}
---- !u!114 &532845407 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7845964963401785408, guid: 47e920aaffe6f3248a8daa4f3d24c007, type: 3}
-  m_PrefabInstance: {fileID: 532845406}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 569ae036137e3ba4691cf06e9330e28d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &565440906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7363,6 +7340,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasForVR
       objectReference: {fileID: 0}
+    - target: {fileID: 473526085924024561, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1542137038389174489, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7443,6 +7424,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1561198707278838558, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816964546624571293, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7460,10 +7449,6 @@ PrefabInstance:
       propertyPath: canvasGroup
       value: 
       objectReference: {fileID: 96634614}
-    - target: {fileID: 3082423866530565413, guid: 16817f92beb193b4091b0cce63903603, type: 3}
-      propertyPath: sceneToChangeName
-      value: Kitchen
-      objectReference: {fileID: 0}
     - target: {fileID: 3349558595189191227, guid: 16817f92beb193b4091b0cce63903603, type: 3}
       propertyPath: m_Name
       value: SceneManager
