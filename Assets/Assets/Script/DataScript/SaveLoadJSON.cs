@@ -33,6 +33,7 @@ public class SaveLoadJSON : MonoBehaviour
 
             playerSO.currentGameLevel = playerData.currentGameLevel;
             playerSO.currentStar = playerData.currentStar;
+            playerSO.currentPlayerMiniGame = playerData.currentPlayerMiniGame;
 
             GameManager.Instance.SetPlayerDataToCurrent();
         }

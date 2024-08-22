@@ -9,17 +9,33 @@ public class GameManager : Singleton<GameManager>
 
     [Header("PlayerData")]
     public int currentGameLevel = 1;
+    public int currentPlayerMiniGame = 0;
     public int currentStar = 0;
+
+    [Header("MiniGameSetting")]
+    public int maxNumberOfMiniGame = 5;
 
     private void Awake()
     {
-        currentGameLevel = playerData.currentGameLevel;
-        currentStar = playerData.currentStar;
+        SetPlayerDataToCurrent();
     }
 
     public void SetPlayerDataToCurrent()
     {
         currentGameLevel = playerData.currentGameLevel;
         currentStar = playerData.currentStar;
+        currentPlayerMiniGame = playerData.currentPlayerMiniGame;
+    }
+
+    public void ChangeGameObject()
+    {
+        if (currentPlayerMiniGame + 1 > maxNumberOfMiniGame)
+        {
+            currentPlayerMiniGame = 1;
+        }
+        else
+        {
+            currentPlayerMiniGame++;
+        } 
     }
 }
