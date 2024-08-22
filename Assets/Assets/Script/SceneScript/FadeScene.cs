@@ -8,39 +8,42 @@ using UnityEngine.SceneManagement;
 public class FadeScene : MonoBehaviour
 {
     [SerializeField] private CanvasGroup canvasGroup;
-    [SerializeField] string sceneToChangeName;
+    //[SerializeField] string sceneToChangeName;
     [SerializeField] PlayerSO playerSO;
+    [SerializeField] GameObject poseToGoNextObject;
     private Tween fadeTween;
 
-    Scene currentScene;
-
-    public void Start()
+    public void DoFadeAndChangeSceneWithLoad()
     {
-        currentScene = SceneManager.GetActiveScene();
+        StartFade();
     }
-
     public void DoFadeAndChangeScene()
     {
-        int currentMiniGame = GameManager.Instance.currentPlayerMiniGame;
+        GameManager.Instance.ChangeMiniGame();
+        StartFade();
+    }
 
+    public void StartFade()
+    {
+        int currentMiniGame = GameManager.Instance.currentPlayerMiniGame;
         if (currentMiniGame == 1)
         {
-            DoFadeAndChangePosition();
+            StartCoroutine(DoWhenFade("Bedroom" + GameManager.Instance.currentGameLevel));
         }
-        else
+        else if (currentMiniGame > 1 && currentMiniGame < 5)
         {
-            StartCoroutine(DoWhenFade());
+            StartCoroutine(DoWhenFade("Kitchen" + GameManager.Instance.currentGameLevel));
+        }
+        else if (currentMiniGame > 4 && currentMiniGame < 6)
+        {
+            StartCoroutine(DoWhenFade("Bathroom" + GameManager.Instance.currentGameLevel));
         }
     }
 
     public void DoFadeAndChangeSceneMainMenu()
     {
-        StartCoroutine(DoWhenFadeMainMenu());
-    }
-
-    public void DoFadeAndChangePosition()
-    {
-        StartCoroutine(DoWhenChangePosition());
+        GameManager.Instance.currentPlayerMiniGame = 0;
+        StartCoroutine(DoWhenFadeMainMenu("Bedroom" + 0));
     }
 
     public void FadeIn(float duration)
@@ -71,7 +74,7 @@ public class FadeScene : MonoBehaviour
         fadeTween.onComplete += onEnd;
     }
 
-    private IEnumerator DoWhenFade()
+    private IEnumerator DoWhenFade(string sceneName)
     {
         FadeIn(1f);
         yield return new WaitForSeconds(3f);
@@ -79,32 +82,18 @@ public class FadeScene : MonoBehaviour
         // Add sound here
         //
         FadeOut(1f);
-        SceneManager.LoadScene(sceneToChangeName);
+        SceneManager.LoadScene(sceneName);
     }
     
-    private IEnumerator DoWhenFadeMainMenu()
+    private IEnumerator DoWhenFadeMainMenu(string sceneName)
     {
-        playerSO.currentPlayerMiniGame = 0;
+
         FadeIn(1f);
         yield return new WaitForSeconds(3f);
         //
         // Add sound here
         //
         FadeOut(1f);
-        SceneManager.LoadScene(sceneToChangeName);
+        SceneManager.LoadScene(sceneName);
     }
-
-    private IEnumerator DoWhenChangePosition()
-    {
-        playerSO.currentPlayerMiniGame = 0;
-        FadeIn(1f);
-        yield return new WaitForSeconds(3f);
-        //
-        // Add sound here
-        //
-        FadeOut(1f);
-        SpawnPosition.Instance.setPosition();
-    }
-
-
 }

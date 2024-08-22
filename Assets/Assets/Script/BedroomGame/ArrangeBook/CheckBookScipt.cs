@@ -14,8 +14,8 @@ public class BookTargetScript
 public class CheckBookScipt : ArrangeScript
 {
     [SerializeField] TMP_Text currentTargetText;
-
     [SerializeField] List<BookTargetScript> bookTargetAndAmountOfBook = new List<BookTargetScript>();
+    [SerializeField] GameObject poseToGoNextObject;
 
     private int currentAmoutOfBookTarget = 0;
 
@@ -36,15 +36,16 @@ public class CheckBookScipt : ArrangeScript
             currentAmoutOfBookTarget += bookTargetAndAmountOfBook[typeOfBook].amountOfBook;
         }
 
-        CheckIsNoTarget();
+        CheckIsFinish();
     }
 
-    public override void CheckIsNoTarget()
+    public override void CheckIsFinish()
     {
 
         if (currentAmoutOfBookTarget == 0)
         {
             currentTargetText.text = "FINISH";
+            poseToGoNextObject.SetActive(true);
             isNoBook = true;
         }
         else

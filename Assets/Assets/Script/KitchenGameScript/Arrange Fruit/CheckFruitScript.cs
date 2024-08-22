@@ -34,10 +34,10 @@ public class CheckFruitScript : ArrangeScript
             currentAmoutOfFruitTarget += fruitTargetAndAmountOfFruit[typeOfFruit].amountOfFruit;
         }
 
-        CheckIsNoTarget();
+        CheckIsFinish();
     }
 
-    public override void CheckIsNoTarget()
+    public override void CheckIsFinish()
     {
         if (currentAmoutOfFruitTarget == 0)
         {
