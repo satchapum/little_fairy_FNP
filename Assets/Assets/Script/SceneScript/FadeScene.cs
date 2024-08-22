@@ -11,6 +11,8 @@ public class FadeScene : MonoBehaviour
     //[SerializeField] string sceneToChangeName;
     [SerializeField] PlayerSO playerSO;
     [SerializeField] GameObject poseToGoNextObject;
+
+    public GameObject poseToHide;
     private Tween fadeTween;
 
     public void DoFadeAndChangeSceneWithLoad()
@@ -43,7 +45,8 @@ public class FadeScene : MonoBehaviour
     public void DoFadeAndChangeSceneMainMenu()
     {
         GameManager.Instance.currentPlayerMiniGame = 0;
-        StartCoroutine(DoWhenFadeMainMenu("Bedroom" + 0));
+        
+        StartCoroutine(DoWhenMainMenu("Bedroom" + 0));
     }
 
     public void FadeIn(float duration)
@@ -84,16 +87,9 @@ public class FadeScene : MonoBehaviour
         FadeOut(1f);
         SceneManager.LoadScene(sceneName);
     }
-    
-    private IEnumerator DoWhenFadeMainMenu(string sceneName)
+    private IEnumerator DoWhenMainMenu(string sceneName)
     {
-
-        FadeIn(1f);
-        yield return new WaitForSeconds(3f);
-        //
-        // Add sound here
-        //
-        FadeOut(1f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(sceneName);
     }
 }

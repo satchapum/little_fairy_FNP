@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class SaveLoadJSON : MonoBehaviour
+public class SaveLoadJSON : Singleton<SaveLoadJSON>
 {
     [SerializeField] PlayerData playerData;
     [SerializeField] PlayerSO playerSO;

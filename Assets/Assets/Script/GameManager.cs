@@ -32,12 +32,13 @@ public class GameManager : Singleton<GameManager>
     {
         if (currentPlayerMiniGame + 1 > maxNumberOfMiniGame)
         {
+            currentGameLevel++;
             currentPlayerMiniGame = 1;
         }
         else
         {
             currentPlayerMiniGame++;
         }
-        SpawnPosition.Instance.setPosition();
+        SaveLoadJSON.Instance.SaveGame();
     }
 }
