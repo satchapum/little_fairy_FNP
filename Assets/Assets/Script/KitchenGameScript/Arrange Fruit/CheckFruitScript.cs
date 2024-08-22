@@ -19,11 +19,12 @@ public class CheckFruitScript : ArrangeScript
     private int currentAmoutOfFruitTarget = 0;
 
     public bool isNoFruit = false;
-
+    string textResult = "";
 
     public override void Start()
     {
         UpdateCurrentAmoutOfTarget();
+        ShowFruitData();
     }
 
     public override void UpdateCurrentAmoutOfTarget()
@@ -47,7 +48,8 @@ public class CheckFruitScript : ArrangeScript
         }
         else
         {
-            currentTargetText.text = "The Fruit left\n" + currentAmoutOfFruitTarget;
+
+            
             isNoFruit = false;
         }
     }
@@ -78,11 +80,21 @@ public class CheckFruitScript : ArrangeScript
                     {
                         fruitTargetAndAmountOfFruit[numberOfFruitTarget].amountOfFruit += 1;
                     }
-
+                    ShowFruitData();
                     UpdateCurrentAmoutOfTarget();
                     break;
                 }
+                
             }
         }
+    }
+    private void ShowFruitData()
+    {
+        textResult = "";
+        for (int numberOfFruitTarget = 0; numberOfFruitTarget < fruitTargetAndAmountOfFruit.Count; numberOfFruitTarget++)
+        {
+            textResult += fruitTargetAndAmountOfFruit[numberOfFruitTarget].fruitName + " : " + fruitTargetAndAmountOfFruit[numberOfFruitTarget].amountOfFruit + "\n";
+        }
+        currentTargetText.text = textResult;
     }
 }

@@ -28,6 +28,13 @@ public class GameManager : Singleton<GameManager>
         currentPlayerMiniGame = playerData.currentPlayerMiniGame;
     }
 
+    public void SetPlayerDataToSO()
+    {
+        playerData.currentGameLevel = currentGameLevel;
+        playerData.currentStar = currentStar;
+        playerData.currentPlayerMiniGame = currentPlayerMiniGame;
+    }
+
     public void ChangeMiniGame()
     {
         if (currentPlayerMiniGame + 1 > maxNumberOfMiniGame)
@@ -39,6 +46,7 @@ public class GameManager : Singleton<GameManager>
         {
             currentPlayerMiniGame++;
         }
+        SetPlayerDataToSO();
         SaveLoadJSON.Instance.SaveGame();
     }
 }
