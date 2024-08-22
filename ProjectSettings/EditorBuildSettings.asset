@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Assets/Scenes/Bedroom.unity
     guid: df3ed12f6735ab84683831873cb0c1c6
   - enabled: 1
-    path: Assets/Assets/Scenes/BedroomMainMenu.unity
+    path: Assets/Assets/Scenes/Bedroom.unity
     guid: 36f6adc323f1d7a4caa3ca3dee95d1ad
   - enabled: 1
     path: Assets/Assets/Scenes/Kitchen.unity
