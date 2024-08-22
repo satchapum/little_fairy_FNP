@@ -27,7 +27,7 @@ public class GameManager : Singleton<GameManager>
         currentPlayerMiniGame = playerData.currentPlayerMiniGame;
     }
 
-    public void ChangeGameObject()
+    public void ChangeMiniGame()
     {
         if (currentPlayerMiniGame + 1 > maxNumberOfMiniGame)
         {
@@ -36,6 +36,7 @@ public class GameManager : Singleton<GameManager>
         else
         {
             currentPlayerMiniGame++;
-        } 
+        }
+        SpawnPosition.Instance.setPosition();
     }
 }
