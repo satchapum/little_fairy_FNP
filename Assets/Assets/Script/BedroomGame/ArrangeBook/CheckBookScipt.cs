@@ -17,41 +17,37 @@ public class CheckBookScipt : ArrangeScript
     [SerializeField] List<BookTargetScript> bookTargetAndAmountOfBook = new List<BookTargetScript>();
     [SerializeField] GameObject poseToGoNextObject;
 
-    private int currentAmoutOfBookTarget = 0;
-
-    public bool isNoBook = false;
+    public bool isFinish = false;
+    public int maxAmountOfBook;
 
 
     public override void Start()
     {
-
-        UpdateCurrentAmoutOfTarget();
-    }
-
-    public override void UpdateCurrentAmoutOfTarget()
-    {
-        currentAmoutOfBookTarget = 0;
-        for (int typeOfBook = 0; typeOfBook < bookTargetAndAmountOfBook.Count; typeOfBook++)
+        for (int numberOfBook = 0; numberOfBook < bookTargetAndAmountOfBook.Count; numberOfBook++)
         {
-            currentAmoutOfBookTarget += bookTargetAndAmountOfBook[typeOfBook].amountOfBook;
+            maxAmountOfBook += bookTargetAndAmountOfBook[numberOfBook].amountOfBook;
         }
-
         CheckIsFinish();
     }
 
     public override void CheckIsFinish()
     {
+        isFinish = false;
+        int numberOfFinish = 0;
 
-        if (currentAmoutOfBookTarget == 0)
+        for (int typeOfFruit = 0; typeOfFruit < bookTargetAndAmountOfBook.Count; typeOfFruit++)
         {
-            currentTargetText.text = "FINISH";
-            poseToGoNextObject.SetActive(true);
-            isNoBook = true;
+            currentTargetText.text = bookTargetAndAmountOfBook[typeOfFruit].amountOfBook + "/" + maxAmountOfBook;
+            if (bookTargetAndAmountOfBook[typeOfFruit].amountOfBook == 0)
+            {
+                numberOfFinish++;
+            }
         }
-        else
+        if (numberOfFinish == bookTargetAndAmountOfBook.Count)
         {
-            currentTargetText.text = "The book left\n" + currentAmoutOfBookTarget;
-            isNoBook = false;
+            poseToGoNextObject.SetActive(true);
+            currentTargetText.text = "Finish";
+            isFinish = true;
         }
     }
 
@@ -81,8 +77,7 @@ public class CheckBookScipt : ArrangeScript
                     {
                         bookTargetAndAmountOfBook[numberOfBookTarget].amountOfBook += 1;
                     }
-
-                    UpdateCurrentAmoutOfTarget();
+                    CheckIsFinish();
                     break;
                 }
             }

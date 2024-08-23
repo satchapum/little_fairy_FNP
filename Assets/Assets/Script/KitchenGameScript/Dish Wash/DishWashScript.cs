@@ -11,7 +11,10 @@ public class DishWashScript : MonoBehaviour
     [SerializeField] private Texture2D _brush;
 
     [SerializeField] private Material _material;
-    [SerializeField] TMP_Text Showpercentage;
+    [SerializeField] public bool isFinish;
+    [SerializeField] public bool isDishOnGrab;
+    //[SerializeField] TMP_Text Showpercentage;
+
 
     private Texture2D _templateDirtMask;
     private float dirtAmountTotal;
@@ -20,7 +23,7 @@ public class DishWashScript : MonoBehaviour
 
     [Header("From other gameobject")]
     [SerializeField] private SpongeRayCast spongeRayCast;
-    [SerializeField] GameObject poseToGoNextObject;
+
 
     private void Awake()
     {
@@ -29,17 +32,16 @@ public class DishWashScript : MonoBehaviour
         dirtAmountTotal = CalculateDirtAmount(_dirtMaskBase);
         dirtAmount = dirtAmountTotal;
 
-        // Update dirtAmountPercentage periodically
         FunctionPeriodic.Create(() => {
             dirtAmountPercentage = GetDirtAmount() * 100f;
             if (Mathf.RoundToInt(GetDirtAmount() * 100f) <= 15)
             {
-                Showpercentage.text = "Finish";
-                poseToGoNextObject.SetActive(true);
+                isFinish = true;
+                //Showpercentage.text = "Finish";
             }
             else
             {
-                Showpercentage.text = Mathf.RoundToInt(GetDirtAmount() * 100f) + "%";
+                //Showpercentage.text = Mathf.RoundToInt(GetDirtAmount() * 100f) + "%";
             }
         }, .03f);
     }
@@ -57,12 +59,21 @@ public class DishWashScript : MonoBehaviour
         }
     }
 
+    public void SetBookOnGrab()
+    {
+        isDishOnGrab = true;
+    }
+
+    public void SetBookIsNotOnGrab()
+    {
+        isDishOnGrab = false;
+    }
+
     private void ApplyBrush(int pixelX, int pixelY)
     {
         int brushHalfWidth = _brush.width / 2;
         int brushHalfHeight = _brush.height / 2;
 
-        // Calculate the area of the brush on the texture
         int startX = Mathf.Clamp(pixelX - brushHalfWidth, 0, _templateDirtMask.width);
         int startY = Mathf.Clamp(pixelY - brushHalfHeight, 0, _templateDirtMask.height);
         int endX = Mathf.Clamp(pixelX + brushHalfWidth, 0, _templateDirtMask.width);
@@ -81,7 +92,7 @@ public class DishWashScript : MonoBehaviour
         {
             float removedAmount = dirtMaskPixels[i].g * (1 - brushPixels[i].g);
             dirtAmount -= removedAmount;
-            dirtMaskPixels[i].g *= brushPixels[i].g;  // Update green channel to represent dirt amount
+            dirtMaskPixels[i].g *= brushPixels[i].g;  
         }
 
         _templateDirtMask.SetPixels(startX, startY, width, height, dirtMaskPixels);

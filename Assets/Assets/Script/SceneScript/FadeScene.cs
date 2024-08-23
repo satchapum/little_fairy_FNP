@@ -28,6 +28,7 @@ public class FadeScene : MonoBehaviour
     public void StartFade()
     {
         int currentMiniGame = GameManager.Instance.currentPlayerMiniGame;
+
         if (currentMiniGame == 1)
         {
             StartCoroutine(DoWhenFade("Bedroom" + GameManager.Instance.currentGameLevel));
@@ -79,6 +80,7 @@ public class FadeScene : MonoBehaviour
 
     private IEnumerator DoWhenFade(string sceneName)
     {
+        //poseToGoNextObject.SetActive(false);
         FadeIn(1f);
         yield return new WaitForSeconds(3f);
         //

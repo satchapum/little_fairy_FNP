@@ -677,6 +677,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 45eef7afd713ebd4c9520d06798baaf9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 235626018}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 45eef7afd713ebd4c9520d06798baaf9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 514436548}
   m_SourcePrefab: {fileID: 100100000, guid: 45eef7afd713ebd4c9520d06798baaf9, type: 3}
 --- !u!1 &235626017 stripped
 GameObject:
@@ -1314,7 +1317,8 @@ MonoBehaviour:
   - bookName: Book
     amountOfBook: 3
   poseToGoNextObject: {fileID: 2139072791}
-  isNoBook: 0
+  isFinish: 0
+  maxAmountOfBook: 0
 --- !u!1 &388452015
 GameObject:
   m_ObjectHideFlags: 0
@@ -1715,8 +1719,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 376081760}
-  - {fileID: 1663524511}
   - {fileID: 71004939}
+  - {fileID: 1624206955}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &464968174 stripped
@@ -1751,6 +1755,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 45eef7afd713ebd4c9520d06798baaf9, type: 3}
   m_PrefabInstance: {fileID: 235626016}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &514436548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235626017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactableView: {fileID: 235626020}
+  _whenHover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnhover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 235626024}
+        m_TargetAssemblyTypeName: BookStatus, Assembly-CSharp
+        m_MethodName: SetBookOnGrab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenUnselect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 235626024}
+        m_TargetAssemblyTypeName: BookStatus, Assembly-CSharp
+        m_MethodName: SetBookIsNotOnGrab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &514833495 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c6cfce014a248ac41a9868fbe281e25d, type: 3}
@@ -2008,6 +2073,19 @@ MonoBehaviour:
   _whenSelectingInteractorViewRemoved:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &514833501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514833495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85de01d22dc00746ae11827b758a236, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfMiniGame: 0
 --- !u!1001 &565440906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3314,6 +3392,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 10339ab37daf30349a080cce6368b63d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 931293862}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 10339ab37daf30349a080cce6368b63d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1693895811}
   m_SourcePrefab: {fileID: 100100000, guid: 10339ab37daf30349a080cce6368b63d, type: 3}
 --- !u!1 &931293861 stripped
 GameObject:
@@ -4762,6 +4843,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c6cfce014a248ac41a9868fbe281e25d, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 514833501}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c6cfce014a248ac41a9868fbe281e25d, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 514833497}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c6cfce014a248ac41a9868fbe281e25d, type: 3}
       insertIndex: -1
@@ -5218,6 +5302,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a379f34d4f4f2e408d34f14bfb753ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1624206953
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1624206955}
+  - component: {fileID: 1624206954}
+  m_Layer: 0
+  m_Name: GroupForHide
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1624206954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624206953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85de01d22dc00746ae11827b758a236, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfMiniGame: 1
+--- !u!4 &1624206955
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624206953}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4832709404056804527}
+  - {fileID: 1663524511}
+  m_Father: {fileID: 431317907}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1630569246
 GameObject:
   m_ObjectHideFlags: 0
@@ -5313,7 +5444,7 @@ Transform:
   - {fileID: 514436547}
   - {fileID: 1693895810}
   - {fileID: 344425989}
-  m_Father: {fileID: 431317907}
+  m_Father: {fileID: 1624206955}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1673746057
 GameObject:
@@ -5439,6 +5570,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 10339ab37daf30349a080cce6368b63d, type: 3}
   m_PrefabInstance: {fileID: 931293860}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1693895811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931293861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactableView: {fileID: 931293864}
+  _whenHover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnhover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 931293868}
+        m_TargetAssemblyTypeName: BookStatus, Assembly-CSharp
+        m_MethodName: SetBookOnGrab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenUnselect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 931293868}
+        m_TargetAssemblyTypeName: BookStatus, Assembly-CSharp
+        m_MethodName: SetBookIsNotOnGrab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1701937244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5618,7 +5810,7 @@ Transform:
   m_GameObject: {fileID: 1755324497}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.863, y: 1.3, z: -1.754}
+  m_LocalPosition: {x: -0.292, y: 1.3, z: -1.927}
   m_LocalScale: {x: 0.14263, y: 0.14263, z: 0.14263}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6633,6 +6825,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 863100ceca37b1d4fb72b8293d6f77d7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1939312447}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 863100ceca37b1d4fb72b8293d6f77d7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1939312455}
   m_SourcePrefab: {fileID: 100100000, guid: 863100ceca37b1d4fb72b8293d6f77d7, type: 3}
 --- !u!1 &1939312446 stripped
 GameObject:
@@ -6811,6 +7006,67 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bookName: Book
+--- !u!114 &1939312455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939312446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactableView: {fileID: 1939312449}
+  _whenHover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnhover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1939312453}
+        m_TargetAssemblyTypeName: BookStatus, Assembly-CSharp
+        m_MethodName: SetBookOnGrab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenUnselect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1939312453}
+        m_TargetAssemblyTypeName: BookStatus, Assembly-CSharp
+        m_MethodName: SetBookIsNotOnGrab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1990488718
 GameObject:
   m_ObjectHideFlags: 0
@@ -6930,6 +7186,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1990488718}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &2008049276
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1943343179133404476, guid: 91150c7541786f24c9f8f5c58da462c4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.60929495
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943343179133404476, guid: 91150c7541786f24c9f8f5c58da462c4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.09320569
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943343179133404476, guid: 91150c7541786f24c9f8f5c58da462c4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.14796218
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943343179133404476, guid: 91150c7541786f24c9f8f5c58da462c4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943343179133404476, guid: 91150c7541786f24c9f8f5c58da462c4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943343179133404476, guid: 91150c7541786f24c9f8f5c58da462c4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943343179133404476, guid: 91150c7541786f24c9f8f5c58da462c4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943343179133404476, guid: 91150c7541786f24c9f8f5c58da462c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943343179133404476, guid: 91150c7541786f24c9f8f5c58da462c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943343179133404476, guid: 91150c7541786f24c9f8f5c58da462c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248023492161766989, guid: 91150c7541786f24c9f8f5c58da462c4, type: 3}
+      propertyPath: miniGameList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248023492161766989, guid: 91150c7541786f24c9f8f5c58da462c4, type: 3}
+      propertyPath: miniGameList.Array.data[0]
+      value: 
+      objectReference: {fileID: 1624206953}
+    - target: {fileID: 4248023492161766989, guid: 91150c7541786f24c9f8f5c58da462c4, type: 3}
+      propertyPath: miniGameList.Array.data[1]
+      value: 
+      objectReference: {fileID: 514833495}
+    - target: {fileID: 9038581671257783211, guid: 91150c7541786f24c9f8f5c58da462c4, type: 3}
+      propertyPath: m_Name
+      value: MiniGameManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91150c7541786f24c9f8f5c58da462c4, type: 3}
 --- !u!1001 &2018682148
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7439,7 +7764,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1624206955}
     m_Modifications:
     - target: {fileID: 473526085924024561, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
       propertyPath: m_Name
@@ -7491,7 +7816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1542137038389174489, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.488
+      value: -0.39298296
       objectReference: {fileID: 0}
     - target: {fileID: 1542137038389174489, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7511,11 +7836,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1542137038389174489, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.326
+      value: 1.0568619
       objectReference: {fileID: 0}
     - target: {fileID: 1542137038389174489, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.198
+      value: -0.14110279
       objectReference: {fileID: 0}
     - target: {fileID: 1542137038389174489, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7542,6 +7867,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
+--- !u!224 &4832709404056804527 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1542137038389174489, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
+  m_PrefabInstance: {fileID: 4832709404056804526}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8932493983317415504
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7621,7 +7951,7 @@ SceneRoots:
   - {fileID: 791477824}
   - {fileID: 8932493983317415504}
   - {fileID: 975403679}
-  - {fileID: 4832709404056804526}
   - {fileID: 40858793}
   - {fileID: 792815630}
   - {fileID: 431317907}
+  - {fileID: 2008049276}

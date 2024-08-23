@@ -16,41 +16,33 @@ public class CheckFruitScript : ArrangeScript
     [SerializeField] GameObject poseToGoNextObject;
     [SerializeField] List<FruitTargetScript> fruitTargetAndAmountOfFruit = new List<FruitTargetScript>();
 
-    private int currentAmoutOfFruitTarget = 0;
-
-    public bool isNoFruit = false;
+    public bool isFinish = false;
     string textResult = "";
+    public int differenceOfNumber;
 
     public override void Start()
     {
-        UpdateCurrentAmoutOfTarget();
-        ShowFruitData();
-    }
-
-    public override void UpdateCurrentAmoutOfTarget()
-    {
-        currentAmoutOfFruitTarget = 0;
-        for (int typeOfFruit = 0; typeOfFruit < fruitTargetAndAmountOfFruit.Count; typeOfFruit++)
-        {
-            currentAmoutOfFruitTarget += fruitTargetAndAmountOfFruit[typeOfFruit].amountOfFruit;
-        }
-
         CheckIsFinish();
+        ShowFruitData();
     }
 
     public override void CheckIsFinish()
     {
-        if (currentAmoutOfFruitTarget == 0)
-        {
-            currentTargetText.text = "FINISH";
-            poseToGoNextObject.SetActive(true);
-            isNoFruit = true;
-        }
-        else
-        {
+        isFinish = false;
+        int numberOfFinish = 0;
 
-            
-            isNoFruit = false;
+        for (int typeOfFruit = 0; typeOfFruit < fruitTargetAndAmountOfFruit.Count; typeOfFruit++)
+        {
+            if (fruitTargetAndAmountOfFruit[typeOfFruit].amountOfFruit == 0)
+            {
+                numberOfFinish++;
+            }
+        }
+        if (numberOfFinish == fruitTargetAndAmountOfFruit.Count)
+        {
+            poseToGoNextObject.SetActive(true);
+            currentTargetText.text = "Finish";
+            isFinish = true;
         }
     }
 
@@ -72,7 +64,7 @@ public class CheckFruitScript : ArrangeScript
             {
                 if (fruitCollider.gameObject.GetComponent<FruitScript>().fruitName == fruitTargetAndAmountOfFruit[numberOfFruitTarget].fruitName)
                 {
-                    if (IsEnter == true)
+                    if (IsEnter)
                     {
                         fruitTargetAndAmountOfFruit[numberOfFruitTarget].amountOfFruit -= 1;
                     }
@@ -81,7 +73,7 @@ public class CheckFruitScript : ArrangeScript
                         fruitTargetAndAmountOfFruit[numberOfFruitTarget].amountOfFruit += 1;
                     }
                     ShowFruitData();
-                    UpdateCurrentAmoutOfTarget();
+                    CheckIsFinish();
                     break;
                 }
                 

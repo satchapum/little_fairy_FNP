@@ -6,8 +6,6 @@ public abstract class ArrangeScript : MonoBehaviour
 {
     public abstract void Start();
 
-    public abstract void UpdateCurrentAmoutOfTarget();
-
     public abstract void CheckIsFinish();
 
     public abstract void OnTriggerEnter(Collider fruitCollider);
