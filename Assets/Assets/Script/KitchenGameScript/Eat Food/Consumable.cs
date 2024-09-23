@@ -27,7 +27,7 @@ public class Consumable : MonoBehaviour
     {
         if (isFinished && SpoonChange.Instance.numberModelOfSpoon == 0)
         {
-            canvasShowFinish.text = "Finish";
+            EatGameManager.Instance.isEatStateFinish = true;
             poseToGoNextObject.SetActive(true);
         }
     }
@@ -35,8 +35,6 @@ public class Consumable : MonoBehaviour
     [ContextMenu("Consume")]
     public void Consume()
     {
-        
-        
         if (!isFinished)
         {
             index++;
