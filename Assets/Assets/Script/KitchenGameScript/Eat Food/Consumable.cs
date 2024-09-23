@@ -27,7 +27,7 @@ public class Consumable : MonoBehaviour
     {
         if (isFinished && SpoonChange.Instance.numberModelOfSpoon == 0)
         {
-            EatGameManager.Instance.isEatStateFinish = true;
+            //EatGameManager.Instance.isEatStateFinish = true;
             poseToGoNextObject.SetActive(true);
         }
     }
