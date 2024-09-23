@@ -5,7 +5,9 @@ using TMPro;
 
 public class EatGameManager : Singleton<EatGameManager>
 {
+    [SerializeField] public bool isThisMiniGameFinish;
     [SerializeField] public bool isEatStateFinish;
+    [SerializeField] GameObject poseToGoNextObject;
     [SerializeField] TMP_Text canvasShowFinish;
 
     [Header("GameObject to set active")]
@@ -23,9 +25,16 @@ public class EatGameManager : Singleton<EatGameManager>
     {
         if (isEatStateFinish)
         {
-            canvasShowFinish.text = "Finish";
+            canvasShowFinish.text = "Move plate to the sink";
             grabblePlate.SetActive(true);
             inGrabblePlate.SetActive(false);
+            poseToGoNextObject.SetActive(false);
+        }
+
+        if (isThisMiniGameFinish)
+        {
+            poseToGoNextObject.SetActive(true);
+            canvasShowFinish.text = "Finish";
         }
     }
 }

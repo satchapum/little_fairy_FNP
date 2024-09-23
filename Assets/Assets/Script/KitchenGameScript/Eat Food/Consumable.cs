@@ -6,7 +6,6 @@ using TMPro;
 public class Consumable : MonoBehaviour
 {
     [SerializeField] TMP_Text canvasShowFinish;
-    [SerializeField] GameObject poseToGoNextObject;
 
     [SerializeField] GameObject[] portions;
     [SerializeField] int index = 0;
@@ -27,8 +26,8 @@ public class Consumable : MonoBehaviour
     {
         if (isFinished && SpoonChange.Instance.numberModelOfSpoon == 0)
         {
-            //EatGameManager.Instance.isEatStateFinish = true;
-            poseToGoNextObject.SetActive(true);
+            EatGameManager.Instance.isEatStateFinish = true;
+
         }
     }
 
