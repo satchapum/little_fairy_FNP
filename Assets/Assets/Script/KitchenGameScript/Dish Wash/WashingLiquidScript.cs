@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckSpongeWet : MonoBehaviour
+public class WashingLiquidScript : MonoBehaviour
 {
     [SerializeField] GameObject spongeCollider;
 
@@ -11,7 +11,7 @@ public class CheckSpongeWet : MonoBehaviour
         if (other.gameObject == spongeCollider)
         {
             SpongeRayCast.Instance.isSpongeWet = true;
-            SpongeRayCast.Instance.ChangeSpongeModel("Water");
+            SpongeRayCast.Instance.ChangeSpongeModel("Soap");
         }
     }
 }

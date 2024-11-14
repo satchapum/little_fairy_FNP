@@ -6,6 +6,7 @@ public class SpongeRayCast : Singleton<SpongeRayCast>
 {
 
     public bool isSpongeWet = false;
+    public bool isSpongeHaveSoap = false;
 
     public RaycastHit hitOut;
     public bool isHit = false;
@@ -16,10 +17,12 @@ public class SpongeRayCast : Singleton<SpongeRayCast>
 
     [SerializeField] GameObject wetSpongeModel;
     [SerializeField] GameObject notWetSpongeModel;
+    [SerializeField] GameObject wetAndSoapSpongeModel;
+    [SerializeField] GameObject soapSpongeModel;
 
     void FixedUpdate()
     {
-        if (!isSpongeWet)
+        if (!isSpongeWet || !isSpongeHaveSoap)
         {
             return;
         }
@@ -40,10 +43,42 @@ public class SpongeRayCast : Singleton<SpongeRayCast>
         }
         transform.hasChanged = false;
     }
+    public void ChangeSpongeModel(string inputObject)
+    {
+        if (isSpongeWet || isSpongeHaveSoap)
+        {
+            ChangeSpongeModelToSoapAndWet();
+        }
+        else if (inputObject == "Water")
+        {
+            ChangeSpongeModelToWet();
+        }
+        else if (inputObject == "Soap")
+        {
+            ChangeSpongeModelToSoap();
+        }
+    }
 
-    public void ChangeSpongeModel()
+    private void ChangeSpongeModelToWet()
     {
         wetSpongeModel.SetActive(true);
         notWetSpongeModel.SetActive(false);
+        soapSpongeModel.SetActive(true);
+        wetAndSoapSpongeModel.SetActive(false);
+    }
+
+    private void ChangeSpongeModelToSoap()
+    {
+        wetSpongeModel.SetActive(false);
+        soapSpongeModel.SetActive(true);
+        notWetSpongeModel.SetActive(false);
+        wetAndSoapSpongeModel.SetActive(false);
+    }
+
+    private void ChangeSpongeModelToSoapAndWet()
+    {
+        wetSpongeModel.SetActive(true);
+        notWetSpongeModel.SetActive(false);
+        wetAndSoapSpongeModel.SetActive(false);
     }
 }

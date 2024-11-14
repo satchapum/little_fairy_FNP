@@ -23,16 +23,13 @@ public class WaterTap : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("testste");
         if (other.gameObject == openCollider)
         {
-            Debug.Log("openCollider");
             isOpen = true;
             DoTurnOnWater();
         }
         else if (other.gameObject == closeCollider)
         {
-            Debug.Log("Collider");
             isOpen = false;
             DoTurnOnWater();
         }
