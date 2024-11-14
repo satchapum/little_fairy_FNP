@@ -6,8 +6,14 @@ public class SoapPusherScript : MonoBehaviour
 {
     [SerializeField] GameObject soapCollider;
 
-    public ParticleSystem bubblePar;
+    public GameObject bubblePar;
     public int numberOfDelay = 1;
+
+    void Start()
+    {
+        soapCollider.SetActive(false);
+        bubblePar.SetActive(false);
+    }
 
     [ContextMenu("PushSoap")]
     public void PushSoap()
@@ -17,10 +23,10 @@ public class SoapPusherScript : MonoBehaviour
 
     IEnumerator SoapShow()
     {
-        bubblePar.Play();
+        bubblePar.SetActive(true);
         soapCollider.SetActive(true);
         yield return new WaitForSeconds(numberOfDelay);
-        bubblePar.Stop();
+        bubblePar.SetActive(false);
         soapCollider.SetActive(false);
     }
 }

@@ -61,14 +61,18 @@ public class SpongeRayCast : Singleton<SpongeRayCast>
 
     private void ChangeSpongeModelToWet()
     {
+        isSpongeWet = true;
+
         wetSpongeModel.SetActive(true);
         notWetSpongeModel.SetActive(false);
-        soapSpongeModel.SetActive(true);
+        soapSpongeModel.SetActive(false);
         wetAndSoapSpongeModel.SetActive(false);
     }
 
     private void ChangeSpongeModelToSoap()
     {
+        isSpongeHaveSoap = true;
+
         wetSpongeModel.SetActive(false);
         soapSpongeModel.SetActive(true);
         notWetSpongeModel.SetActive(false);
@@ -77,8 +81,12 @@ public class SpongeRayCast : Singleton<SpongeRayCast>
 
     private void ChangeSpongeModelToSoapAndWet()
     {
-        wetSpongeModel.SetActive(true);
+        isSpongeWet = true;
+        isSpongeHaveSoap = true;
+
+        wetSpongeModel.SetActive(false);
         notWetSpongeModel.SetActive(false);
-        wetAndSoapSpongeModel.SetActive(false);
+        soapSpongeModel.SetActive(false);
+        wetAndSoapSpongeModel.SetActive(true);
     }
 }
