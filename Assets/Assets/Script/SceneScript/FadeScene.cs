@@ -39,7 +39,7 @@ public class FadeScene : MonoBehaviour
         }
         else if (currentMiniGame > 4 && currentMiniGame < 6)
         {
-            StartCoroutine(DoWhenFade("Bathroom" + GameManager.Instance.currentGameLevel));
+            StartCoroutine(DoWhenFade("Livingroom" + GameManager.Instance.currentGameLevel));
         }
     }
 
