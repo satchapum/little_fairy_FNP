@@ -11,6 +11,7 @@ public class DishWashScript : MonoBehaviour
     [SerializeField] private Texture2D _brush;
 
     [SerializeField] private Material _material;
+    [SerializeField] public bool isClean;
     [SerializeField] public bool isFinish;
     [SerializeField] public bool isDishOnGrab;
     //[SerializeField] TMP_Text Showpercentage;
@@ -36,7 +37,7 @@ public class DishWashScript : MonoBehaviour
             dirtAmountPercentage = GetDirtAmount() * 100f;
             if (Mathf.RoundToInt(GetDirtAmount() * 100f) <= 15)
             {
-                isFinish = true;
+                isClean = true;
                 //Showpercentage.text = "Finish";
             }
             else
@@ -57,6 +58,11 @@ public class DishWashScript : MonoBehaviour
 
             ApplyBrush(pixelX, pixelY);
         }
+    }
+
+    public void SetStatusToClean()
+    {
+        isFinish = true;
     }
 
     public void SetBookOnGrab()
