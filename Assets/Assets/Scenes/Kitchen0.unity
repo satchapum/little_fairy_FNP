@@ -6319,8 +6319,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   distanceToWash: 0.2
-  wetSpongeModel: {fileID: 919132149155446097, guid: 4300b5d15d368854e923b33034302ca4, type: 3}
-  notWetSpongeModel: {fileID: 919132149155446097, guid: b889d9ed160511849a4487c984371701, type: 3}
+  wetSpongeModel: {fileID: 919132147953210325}
+  notWetSpongeModel: {fileID: 919132148899710835}
   wetAndSoapSpongeModel: {fileID: 919132149360638480}
   soapSpongeModel: {fileID: 919132149549623032}
 --- !u!114 &1437633577
@@ -11198,13 +11198,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149549623032}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7143384, y: -0, z: -0, w: 0.69980043}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0.7071068, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 543450652295949302}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 180}
 --- !u!4 &543450653368279210
 Transform:
   m_ObjectHideFlags: 0
@@ -11213,13 +11213,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149360638480}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7143384, y: -0, z: -0, w: 0.69980043}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 543450652295949302}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 180, z: 180}
 --- !u!4 &543450653563889010 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 963fc6bbddd089a4f9a73711b9927169, type: 3}
@@ -11305,7 +11305,7 @@ GameObject:
   - component: {fileID: 1437633577}
   - component: {fileID: 1437633578}
   m_Layer: 0
-  m_Name: Sponge 1
+  m_Name: Sponge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11346,7 +11346,7 @@ GameObject:
   - component: {fileID: 3469287836672348780}
   - component: {fileID: 1711813855897757350}
   m_Layer: 0
-  m_Name: Sponge 1
+  m_Name: NotWet_Sponge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
