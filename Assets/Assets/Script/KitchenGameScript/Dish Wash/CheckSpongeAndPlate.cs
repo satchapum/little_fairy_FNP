@@ -7,7 +7,7 @@ public class CheckSpongeAndPlate : MonoBehaviour
     [SerializeField] GameObject spongeCollider;
     [SerializeField] List<GameObject> plateList = new List<GameObject>();
     [SerializeField] string typeOfLiquid;
-
+   
     private void Awake()
     {
         DishWashScript[] dishes = FindObjectsOfType<DishWashScript>();

@@ -25,7 +25,6 @@ public class DishWashScript : MonoBehaviour
     [Header("From other gameobject")]
     [SerializeField] private SpongeRayCast spongeRayCast;
 
-
     private void Awake()
     {
         CreateTexture();

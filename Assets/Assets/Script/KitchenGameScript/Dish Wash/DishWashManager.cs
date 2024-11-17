@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using OpenCover.Framework.Model;
 
 public class DishWashManager : MonoBehaviour
 {
@@ -40,11 +41,18 @@ public class DishWashManager : MonoBehaviour
             {
                 if (dishList[numberOfDish].dirtAmountPercentage <= 15)
                 {
-                    Showpercentage.text += "Dish Number " + (numberOfDish + 1) + " : " + "Finish\n";
+                    if (dishList[numberOfDish].isFinish)
+                    {
+                        Showpercentage.text += "Dish Number " + (numberOfDish + 1) + " : " + "Finish\n";
+                    }
+                    else
+                    {
+                        Showpercentage.text += "Dish Number " + (numberOfDish + 1) + " : " + "Wash by the water\n";
+                    }
                 }
                 else
                 {
-                    Showpercentage.text += "Dish Number " + (numberOfDish + 1) + " : " + dishList[numberOfDish].dirtAmountPercentage + "\n";
+                    Showpercentage.text += "Dish Number " + (numberOfDish + 1) + " : " + (int)dishList[numberOfDish].dirtAmountPercentage + "\n";
                 }
                 
             }
@@ -57,13 +65,21 @@ public class DishWashManager : MonoBehaviour
                 if (dishList[numberOfDish].isDishOnGrab)
                 {
                     if (dishList[numberOfDish].dirtAmountPercentage <= 15)
-                    { 
-                        Showpercentage.text += "Dish Number " + (numberOfDish + 1) + " : " + "Finish";
-                        break;
+                    {
+                        if (dishList[numberOfDish].isFinish)
+                        {
+                            Showpercentage.text += "Dish Number " + (numberOfDish + 1) + " : " + "Finish\n";
+                            break;
+                        }
+                        else
+                        {
+                            Showpercentage.text += "Dish Number " + (numberOfDish + 1) + " : " + "Wash by the water\n";
+                            break;
+                        }
                     }
                     else
                     {
-                        Showpercentage.text += "Dish Number " + (numberOfDish + 1) + " : " + dishList[numberOfDish].dirtAmountPercentage;
+                        Showpercentage.text += "Dish Number " + (numberOfDish + 1) + " : " + (int)dishList[numberOfDish].dirtAmountPercentage;
 
                     }
                 }
