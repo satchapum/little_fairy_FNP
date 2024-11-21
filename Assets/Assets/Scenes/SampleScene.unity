@@ -2336,6 +2336,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 789346822930323761, guid: 7e6c1968fb4957b4480b1f41df7f5360, type: 3}
+      propertyPath: _rotationAxis
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 789346822930323761, guid: 7e6c1968fb4957b4480b1f41df7f5360, type: 3}
       propertyPath: _pivotTransform
       value: 
       objectReference: {fileID: 1249455002}
