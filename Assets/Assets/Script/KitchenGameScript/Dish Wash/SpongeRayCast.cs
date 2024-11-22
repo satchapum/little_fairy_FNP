@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.Audio;
 
 public class SpongeRayCast : Singleton<SpongeRayCast>
 {
 
     public bool isSpongeWet = false;
     public bool isSpongeHaveSoap = false;
+    public int numberToPlaySound = 0;
+    [SerializeField] AudioSource spongeAudioSource;
 
     public RaycastHit hitOut;
     public bool isHit = false;
@@ -31,12 +34,18 @@ public class SpongeRayCast : Singleton<SpongeRayCast>
         {
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, distanceToWash, layerMask))
             {
+                if (numberToPlaySound == 0)
+                {
+                    numberToPlaySound++;
+                    spongeAudioSource.Play();
+                }
                 hitOut = hit;
                 isHit = true;
                 hitObject = hit.collider.gameObject;
             }
             else
             {
+                numberToPlaySound = 0;
                 isHit = false;
             }
 
@@ -48,6 +57,9 @@ public class SpongeRayCast : Singleton<SpongeRayCast>
         if (isSpongeWet || isSpongeHaveSoap)
         {
             ChangeSpongeModelToSoapAndWet();
+
+            //Add Audio Here
+            TutorialSoundManager.Instance.KitchenForDoJobTutorial();
         }
         else if (inputObject == "Water")
         {

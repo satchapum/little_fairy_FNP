@@ -13,6 +13,8 @@ public class DishWashManager : MonoBehaviour
     public bool isAllHandEmptyOrNotEmpty;
     public bool isGameFinish;
 
+    int timeToplayAudio;
+
     private void Start()
     {
         isGameFinish = false;
@@ -107,9 +109,24 @@ public class DishWashManager : MonoBehaviour
 
     private void CheckAllDishIsClean()
     {
-        int firtNumberOfDish = 0;
+        int firstNumberOfDish = 0;
         int numberOfFinishDish = 0;
-        for (int numberOfDish = firtNumberOfDish; numberOfDish < dishList.Count; numberOfDish++)
+        int numberOfCleanDish = 0;
+        
+        for (int numberOfDish = firstNumberOfDish; numberOfDish < dishList.Count; numberOfDish++)
+        {
+            if (dishList[numberOfDish].isClean && timeToplayAudio == 0)
+            {
+                numberOfCleanDish++;
+            }
+        }
+        if (timeToplayAudio == 0)
+        {
+            timeToplayAudio++;
+            TutorialSoundManager.Instance.KitchenForDoJobTutorial();
+        }
+
+        for (int numberOfDish = firstNumberOfDish; numberOfDish < dishList.Count; numberOfDish++)
         {
             if (dishList[numberOfDish].isFinish)
             {

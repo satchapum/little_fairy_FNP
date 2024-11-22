@@ -25,6 +25,7 @@ public class EatGameManager : Singleton<EatGameManager>
     {
         if (isEatStateFinish)
         {
+            TutorialSoundManager.Instance.KitchenForDoJobTutorial();
             canvasShowFinish.text = "Move plate to the sink";
             grabblePlate.SetActive(true);
             inGrabblePlate.SetActive(false);
