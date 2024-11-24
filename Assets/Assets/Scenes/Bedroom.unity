@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589245, b: 0.2978263, a: 1}
+  m_IndirectSpecularColor: {r: 0.17276807, g: 0.21589197, b: 0.29782572, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3782,38 +3782,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pose
       objectReference: {fileID: 0}
-    - target: {fileID: 6120473309233325442, guid: 8694bddae1aa11040a5b11b5fb802026, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6134595163877706795, guid: 8694bddae1aa11040a5b11b5fb802026, type: 3}
-      propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6134595163877706795, guid: 8694bddae1aa11040a5b11b5fb802026, type: 3}
-      propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6134595163877706795, guid: 8694bddae1aa11040a5b11b5fb802026, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 106149676}
-    - target: {fileID: 6134595163877706795, guid: 8694bddae1aa11040a5b11b5fb802026, type: 3}
-      propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6134595163877706795, guid: 8694bddae1aa11040a5b11b5fb802026, type: 3}
-      propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DoFadeAndChangeScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 6134595163877706795, guid: 8694bddae1aa11040a5b11b5fb802026, type: 3}
-      propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: FadeScene, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6134595163877706795, guid: 8694bddae1aa11040a5b11b5fb802026, type: 3}
-      propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 8158304559911045402, guid: 8694bddae1aa11040a5b11b5fb802026, type: 3}
       propertyPath: _hand
       value: 
