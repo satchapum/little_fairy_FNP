@@ -32,7 +32,7 @@ public class DishWashManager : MonoBehaviour
         CheckDishGrab();
         if (isGameFinish)
         {
-            Showpercentage.text = "Finish";
+            Showpercentage.text = "เสร็จแล้ว";
             return;
         }
         Showpercentage.text = "";
@@ -45,16 +45,16 @@ public class DishWashManager : MonoBehaviour
                 {
                     if (dishList[numberOfDish].isFinish)
                     {
-                        Showpercentage.text += "Dish Number " + (numberOfDish + 1) + " : " + "Finish\n";
+                        Showpercentage.text += "จานหมายเลข " + (numberOfDish + 1) + " : " + "เสร็จแล้ว\n";
                     }
                     else
                     {
-                        Showpercentage.text += "Dish Number " + (numberOfDish + 1) + " : " + "Wash by the water\n";
+                        Showpercentage.text += "จานหมายเลข " + (numberOfDish + 1) + " : " + "Wash by the water\n";
                     }
                 }
                 else
                 {
-                    Showpercentage.text += "Dish Number " + (numberOfDish + 1) + " : " + (int)dishList[numberOfDish].dirtAmountPercentage + "\n";
+                    Showpercentage.text += "จานหมายเลข " + (numberOfDish + 1) + " : " + (int)dishList[numberOfDish].dirtAmountPercentage + "\n";
                 }
                 
             }
@@ -70,18 +70,18 @@ public class DishWashManager : MonoBehaviour
                     {
                         if (dishList[numberOfDish].isFinish)
                         {
-                            Showpercentage.text += "Dish Number " + (numberOfDish + 1) + " : " + "Finish\n";
+                            Showpercentage.text += "จานหมายเลข " + (numberOfDish + 1) + " : " + "เสร็จแล้ว\n";
                             break;
                         }
                         else
                         {
-                            Showpercentage.text += "Dish Number " + (numberOfDish + 1) + " : " + "Wash by the water\n";
+                            Showpercentage.text += "จานหมายเลข " + (numberOfDish + 1) + " : " + "Wash by the water\n";
                             break;
                         }
                     }
                     else
                     {
-                        Showpercentage.text += "Dish Number " + (numberOfDish + 1) + " : " + (int)dishList[numberOfDish].dirtAmountPercentage;
+                        Showpercentage.text += "จานหมายเลข " + (numberOfDish + 1) + " : " + (int)dishList[numberOfDish].dirtAmountPercentage;
 
                     }
                 }
