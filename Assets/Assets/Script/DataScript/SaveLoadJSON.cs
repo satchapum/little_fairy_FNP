@@ -38,7 +38,12 @@ public class SaveLoadJSON : Singleton<SaveLoadJSON>
             GameManager.Instance.SetPlayerDataToCurrent();
         }
         else
+        {
+            SaveGame();
             Debug.Log("There is no save files to load!");
+        }
+            
+            
 
     }
 

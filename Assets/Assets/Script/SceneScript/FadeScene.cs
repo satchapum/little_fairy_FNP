@@ -45,6 +45,7 @@ public class FadeScene : MonoBehaviour
 
     public void DoFadeAndChangeSceneMainMenu()
     {
+        Debug.Log("test");
         GameManager.Instance.currentPlayerMiniGame = 0;
         
         StartCoroutine(DoWhenMainMenu("Bedroom" + 0));
