@@ -18,7 +18,7 @@ public class Consumable : MonoBehaviour
     {
         //_audioSource.playOnAwake = false;
         Setvisual();
-        canvasShowFinish.text = "Not Finish";
+        canvasShowFinish.text = "ทานให้หมดนะ";
     }
 
     private void Update()
@@ -38,7 +38,7 @@ public class Consumable : MonoBehaviour
             index++;
             Setvisual();
             //_audioSource.Play();
-            canvasShowFinish.text = "Not Finish";
+            canvasShowFinish.text = "ทานให้หมดนะ";
         }
     }
 

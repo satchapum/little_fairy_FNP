@@ -37,7 +37,7 @@ public class CheckBookScipt : ArrangeScript
 
         for (int typeOfFruit = 0; typeOfFruit < bookTargetAndAmountOfBook.Count; typeOfFruit++)
         {
-            currentTargetText.text = bookTargetAndAmountOfBook[typeOfFruit].amountOfBook + "/" + maxAmountOfBook;
+            currentTargetText.text = "จำนวนหนังสือที่ยังจัดไม่เสร็จ " + (maxAmountOfBook - bookTargetAndAmountOfBook[typeOfFruit].amountOfBook);
             if (bookTargetAndAmountOfBook[typeOfFruit].amountOfBook == 0)
             {
                 numberOfFinish++;
@@ -46,7 +46,7 @@ public class CheckBookScipt : ArrangeScript
         if (numberOfFinish == bookTargetAndAmountOfBook.Count)
         {
             poseToGoNextObject.SetActive(true);
-            currentTargetText.text = "Finish";
+            currentTargetText.text = "ผ่านแล้ว";
             isFinish = true;
         }
     }

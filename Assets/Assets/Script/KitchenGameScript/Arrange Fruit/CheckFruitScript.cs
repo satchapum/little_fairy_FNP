@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 [System.Serializable]
 public class FruitTargetScript
 {
     public string fruitName;
+    public Sprite fruitImage;
     public int amountOfFruit;
 }
 
@@ -15,6 +17,9 @@ public class CheckFruitScript : ArrangeScript
     [SerializeField] TMP_Text currentTargetText;
     [SerializeField] GameObject poseToGoNextObject;
     [SerializeField] List<FruitTargetScript> fruitTargetAndAmountOfFruit = new List<FruitTargetScript>();
+
+    [SerializeField] GameObject textChildren;
+    [SerializeField] GameObject copyOfTextPanel;
 
     public bool isFinish = false;
     string textResult = "";
@@ -41,7 +46,12 @@ public class CheckFruitScript : ArrangeScript
         if (numberOfFinish == fruitTargetAndAmountOfFruit.Count)
         {
             poseToGoNextObject.SetActive(true);
-            currentTargetText.text = "Finish";
+            for (var i = textChildren.transform.childCount - 1; i >= 0; i--)
+            {
+                GameObject a = textChildren.transform.GetChild(i).gameObject;
+                Destroy(a);
+            }
+            currentTargetText.text = "ผ่านแล้ว";
             isFinish = true;
         }
     }
@@ -82,11 +92,21 @@ public class CheckFruitScript : ArrangeScript
     }
     private void ShowFruitData()
     {
-        textResult = "";
+        for (var i = textChildren.transform.childCount - 1; i >= 0; i--)
+        {
+            GameObject a = textChildren.transform.GetChild(i).gameObject;
+            Destroy(a);
+        }
         for (int numberOfFruitTarget = 0; numberOfFruitTarget < fruitTargetAndAmountOfFruit.Count; numberOfFruitTarget++)
         {
-            textResult += fruitTargetAndAmountOfFruit[numberOfFruitTarget].fruitName + " : " + fruitTargetAndAmountOfFruit[numberOfFruitTarget].amountOfFruit + "\n";
+            GameObject newText = Instantiate(copyOfTextPanel ,textChildren.transform, true);
+            newText.transform.SetParent(textChildren.transform);
+            newText.SetActive(true);
+            newText.GetComponentInChildren<TMP_Text>().text = fruitTargetAndAmountOfFruit[numberOfFruitTarget].fruitName + " X" + fruitTargetAndAmountOfFruit[numberOfFruitTarget].amountOfFruit;
+            newText.GetComponent<Image>().sprite = fruitTargetAndAmountOfFruit[numberOfFruitTarget].fruitImage;
+
+            //textResult += fruitTargetAndAmountOfFruit[numberOfFruitTarget].fruitName + " : " + fruitTargetAndAmountOfFruit[numberOfFruitTarget].amountOfFruit + "\n";
         }
-        currentTargetText.text = textResult;
+        currentTargetText.text = "";
     }
 }
