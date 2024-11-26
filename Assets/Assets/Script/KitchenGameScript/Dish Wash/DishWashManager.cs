@@ -49,7 +49,7 @@ public class DishWashManager : MonoBehaviour
                     }
                     else
                     {
-                        Showpercentage.text += "จานหมายเลข " + (numberOfDish + 1) + " : " + "Wash by the water\n";
+                        Showpercentage.text += "จานหมายเลข " + (numberOfDish + 1) + " : " + "ล้างจานกับนํ้า\n";
                     }
                 }
                 else
@@ -75,7 +75,7 @@ public class DishWashManager : MonoBehaviour
                         }
                         else
                         {
-                            Showpercentage.text += "จานหมายเลข " + (numberOfDish + 1) + " : " + "Wash by the water\n";
+                            Showpercentage.text += "จานหมายเลข " + (numberOfDish + 1) + " : " + "ล้างจานกับนํ้า\n";
                             break;
                         }
                     }
