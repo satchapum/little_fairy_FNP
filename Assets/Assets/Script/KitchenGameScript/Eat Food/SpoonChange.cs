@@ -13,9 +13,7 @@ public class SpoonChange : Singleton<SpoonChange>
 
     private void Start()
     {
-        _audioSource = GetComponent<AudioSource>();
-        _audioSource.playOnAwake = false;
-        Setvisual();
+        //Setvisual();
     }
 
     [ContextMenu("Consume")]
