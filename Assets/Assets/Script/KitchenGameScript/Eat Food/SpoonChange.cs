@@ -13,7 +13,7 @@ public class SpoonChange : Singleton<SpoonChange>
 
     private void Start()
     {
-        //Setvisual();
+        Setvisual();
     }
 
     [ContextMenu("Consume")]

@@ -4891,8 +4891,8 @@ MonoBehaviour:
   portions:
   - {fileID: 1266287705}
   - {fileID: 1703225981}
-  numberModelOfSpoon: 1
-  IsFinished: 1
+  numberModelOfSpoon: 0
+  IsFinished: 0
   _audioSource: {fileID: 14410756}
 --- !u!114 &1150759600
 MonoBehaviour:
