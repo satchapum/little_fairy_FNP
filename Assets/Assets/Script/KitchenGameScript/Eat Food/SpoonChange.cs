@@ -9,7 +9,7 @@ public class SpoonChange : Singleton<SpoonChange>
 
     public bool IsFinished;
 
-    AudioSource _audioSource;
+    public AudioSource _audioSource;
 
     private void Start()
     {
@@ -25,7 +25,7 @@ public class SpoonChange : Singleton<SpoonChange>
         {
             numberModelOfSpoon++;
             Setvisual();
-            //_audioSource.Play();
+            _audioSource.Play();
             if (numberModelOfSpoon == portions.Length-1)
             {
                 IsFinished = true;
@@ -35,7 +35,7 @@ public class SpoonChange : Singleton<SpoonChange>
         {
             numberModelOfSpoon--;
             Setvisual();
-            //_audioSource.Play();
+            _audioSource.Play();
 
             int firstNumberOfModel = 0;
             if (numberModelOfSpoon == firstNumberOfModel)

@@ -13,7 +13,7 @@ public class EatGameManager : Singleton<EatGameManager>
     [Header("GameObject to set active")]
     [SerializeField] GameObject grabblePlate;
     [SerializeField] GameObject inGrabblePlate;
-
+    [SerializeField] int numberOfSoundplayAndSetObject;
     void Start()
     {
         grabblePlate.SetActive(false);
@@ -25,11 +25,17 @@ public class EatGameManager : Singleton<EatGameManager>
     {
         if (isEatStateFinish)
         {
-            TutorialSoundManager.Instance.KitchenForDoJobTutorial();
-            canvasShowFinish.text = "Move plate to the sink";
-            grabblePlate.SetActive(true);
-            inGrabblePlate.SetActive(false);
-            poseToGoNextObject.SetActive(false);
+            if (numberOfSoundplayAndSetObject == 0)
+            {
+                numberOfSoundplayAndSetObject++;
+                TutorialSoundManager.Instance.KitchenForDoJobTutorial();
+                canvasShowFinish.text = "Move plate to the sink";
+                grabblePlate.SetActive(true);
+                inGrabblePlate.SetActive(false);
+                poseToGoNextObject.SetActive(false);
+            }
+            
+            
         }
 
         if (isThisMiniGameFinish)

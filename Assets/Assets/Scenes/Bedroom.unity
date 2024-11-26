@@ -463,9 +463,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1683165975589022776, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 82690787}
-    - targetCorrespondingSourceObject: {fileID: 2950924614649299948, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 391196077}
   m_SourcePrefab: {fileID: 100100000, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
 --- !u!1 &82690786 stripped
 GameObject:
@@ -2151,34 +2148,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388452015}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &391196075 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2950924614649299948, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
-  m_PrefabInstance: {fileID: 82690785}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &391196077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391196075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42f2aba081582ce4fbd4d0bd818a9a54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundSource: {fileID: 0}
-  currentNumberOfSoundTrack: 0
-  whenAwakeTutorialSound: []
-  arrangeBookTutorialSound:
-  - {fileID: 8300000, guid: 5945c63b267baca4abee009e0ddaf466, type: 3}
-  - {fileID: 8300000, guid: b679f40239ed4664181dcb58f3e68fab, type: 3}
-  - {fileID: 8300000, guid: b45303e57700fa9429705bdab83709c5, type: 3}
-  arrangeFruitTutorialSound: []
-  eatGruelTutorialSound: []
-  dishWashTutorialSound: []
-  sweepFloorTutorialSound: []
 --- !u!1 &424526414
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,11 +12,11 @@ public class Consumable : MonoBehaviour
 
     [SerializeField] public bool isFinished => index == portions.Length-1;
 
-    public AudioSource _audioSource;
+    //public AudioSource _audioSource;
 
     private void Start()
     {
-        _audioSource.playOnAwake = false;
+        //_audioSource.playOnAwake = false;
         Setvisual();
         canvasShowFinish.text = "Not Finish";
     }
@@ -37,7 +37,7 @@ public class Consumable : MonoBehaviour
         {
             index++;
             Setvisual();
-            _audioSource.Play();
+            //_audioSource.Play();
             canvasShowFinish.text = "Not Finish";
         }
     }
