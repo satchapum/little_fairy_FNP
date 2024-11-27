@@ -448,6 +448,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: soundSource
+      value: 
+      objectReference: {fileID: 82690786}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: whenAwakeTutorialSound.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9005311846688391821, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -457,6 +465,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+--- !u!82 &82690786 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5811807988343366359, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+  m_PrefabInstance: {fileID: 82690785}
+  m_PrefabAsset: {fileID: 0}
 --- !u!225 &96634614 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 5789735772466256267, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
@@ -9973,7 +9986,7 @@ PrefabInstance:
     - target: {fileID: 363802108486857296, guid: d6b9dcb1f360d054baac599c7ac246fa, type: 3}
       propertyPath: _hand
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1585964813}
     - target: {fileID: 447683240708693457, guid: d6b9dcb1f360d054baac599c7ac246fa, type: 3}
       propertyPath: _fingerFeatureStateProvider
       value: 
@@ -10029,6 +10042,10 @@ PrefabInstance:
     - target: {fileID: 7177627457574557493, guid: d6b9dcb1f360d054baac599c7ac246fa, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 106149676}
+    - target: {fileID: 7177627457574557493, guid: d6b9dcb1f360d054baac599c7ac246fa, type: 3}
+      propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DoFadeSaveAndChangeSceneToMainMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

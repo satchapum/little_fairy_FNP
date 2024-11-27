@@ -27,6 +27,7 @@ public class CheckFruitScript : ArrangeScript
 
     public override void Start()
     {
+        TutorialSoundManager.Instance.CheckCurrentScene();
         CheckIsFinish();
         ShowFruitData();
     }

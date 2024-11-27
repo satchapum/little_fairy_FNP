@@ -16,6 +16,7 @@ public class EatGameManager : Singleton<EatGameManager>
     [SerializeField] int numberOfSoundplayAndSetObject;
     void Start()
     {
+        TutorialSoundManager.Instance.KitchenForDoJobTutorial();
         grabblePlate.SetActive(false);
         inGrabblePlate.SetActive(true);
     }

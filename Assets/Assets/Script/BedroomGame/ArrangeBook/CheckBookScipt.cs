@@ -23,6 +23,7 @@ public class CheckBookScipt : ArrangeScript
 
     public override void Start()
     {
+        TutorialSoundManager.Instance.CheckCurrentScene();
         for (int numberOfBook = 0; numberOfBook < bookTargetAndAmountOfBook.Count; numberOfBook++)
         {
             maxAmountOfBook += bookTargetAndAmountOfBook[numberOfBook].amountOfBook;

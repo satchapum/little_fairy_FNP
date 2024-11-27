@@ -13,10 +13,11 @@ public class DishWashManager : MonoBehaviour
     public bool isAllHandEmptyOrNotEmpty;
     public bool isGameFinish;
 
-    int timeToplayAudio;
+    int timeToplayAudio = 0;
 
     private void Start()
     {
+        TutorialSoundManager.Instance.KitchenForDoJobTutorial();
         isGameFinish = false;
         CheckDishGrab();
     }
@@ -120,11 +121,15 @@ public class DishWashManager : MonoBehaviour
                 numberOfCleanDish++;
             }
         }
-        if (timeToplayAudio == 0)
+        if (numberOfCleanDish == dishList.Count)
         {
-            timeToplayAudio++;
-            TutorialSoundManager.Instance.KitchenForDoJobTutorial();
+            if (timeToplayAudio == 0)
+            {
+                timeToplayAudio++;
+                TutorialSoundManager.Instance.KitchenForDoJobTutorial();
+            }
         }
+   
 
         for (int numberOfDish = firstNumberOfDish; numberOfDish < dishList.Count; numberOfDish++)
         {
