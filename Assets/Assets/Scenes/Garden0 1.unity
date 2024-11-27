@@ -3194,6 +3194,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79af68c5f4afaed4eb9b7e5c3b724db1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsGameFinish: 0
+  poseToGoNext: {fileID: 0}
+  statusText: {fileID: 0}
   numberOfHazardousWaste: 0
   numberOfRecycleWaste: 0
   numberOfWetWaste: 0
