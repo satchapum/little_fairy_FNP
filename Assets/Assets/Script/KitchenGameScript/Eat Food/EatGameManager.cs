@@ -29,7 +29,7 @@ public class EatGameManager : Singleton<EatGameManager>
             {
                 numberOfSoundplayAndSetObject++;
                 TutorialSoundManager.Instance.KitchenForDoJobTutorial();
-                canvasShowFinish.text = "Move plate to the sink";
+                canvasShowFinish.text = "นําจานไปวางที่ซิงค์ล้างจาน";
                 grabblePlate.SetActive(true);
                 inGrabblePlate.SetActive(false);
                 poseToGoNextObject.SetActive(false);
@@ -41,7 +41,7 @@ public class EatGameManager : Singleton<EatGameManager>
         if (isThisMiniGameFinish)
         {
             poseToGoNextObject.SetActive(true);
-            canvasShowFinish.text = "Finish";
+            canvasShowFinish.text = "ผ่านแล้ว";
         }
     }
 }

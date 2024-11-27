@@ -1,5 +1,6 @@
 using DG.Tweening;
 using Meta.WitAi;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -27,16 +28,27 @@ public class FadeScene : MonoBehaviour
 
     public void DoFadeSaveAndChangeSceneToMainMenu()
     {
+        SaveLoadJSON.Instance.SaveGame();
+
+        DoWhenFade("MainmenuScene");
 
     }
 
     public void StartFade()
     {
         int currentMiniGame = GameManager.Instance.currentPlayerMiniGame;
-
+        
         if (currentMiniGame == 1)
         {
-            StartCoroutine(DoWhenFade("Bedroom" + GameManager.Instance.currentGameLevel));
+            try
+            {
+                StartCoroutine(DoWhenFade("Bedroom" + GameManager.Instance.currentGameLevel));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("restart Game");
+                GameManager.Instance.currentGameLevel = 0;
+            }
         }
         else if (currentMiniGame > 1 && currentMiniGame < 5)
         {
