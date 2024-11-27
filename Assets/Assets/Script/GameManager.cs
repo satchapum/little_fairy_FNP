@@ -37,7 +37,7 @@ public class GameManager : Singleton<GameManager>
 
     public void ChangeMiniGame()
     {
-        if (currentPlayerMiniGame > maxNumberOfMiniGame)
+        if (currentPlayerMiniGame >= maxNumberOfMiniGame)
         {
             currentGameLevel++;
             currentPlayerMiniGame = 1;

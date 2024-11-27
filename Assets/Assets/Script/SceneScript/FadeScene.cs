@@ -26,6 +26,7 @@ public class FadeScene : MonoBehaviour
         StartFade();
     }
 
+
     public void DoFadeSaveAndChangeSceneToMainMenu()
     {
         SaveLoadJSON.Instance.SaveGame();
@@ -37,18 +38,10 @@ public class FadeScene : MonoBehaviour
     public void StartFade()
     {
         int currentMiniGame = GameManager.Instance.currentPlayerMiniGame;
-        
+
         if (currentMiniGame == 1)
         {
-            try
-            {
-                StartCoroutine(DoWhenFade("Bedroom" + GameManager.Instance.currentGameLevel));
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("restart Game");
-                GameManager.Instance.currentGameLevel = 0;
-            }
+            StartCoroutine(DoWhenFade("Bedroom" + GameManager.Instance.currentGameLevel));
         }
         else if (currentMiniGame > 1 && currentMiniGame < 5)
         {
@@ -65,6 +58,26 @@ public class FadeScene : MonoBehaviour
         GameManager.Instance.currentPlayerMiniGame = 0;
         
         StartCoroutine(DoWhenMainMenu("Bedroom"));
+    }
+    public void DoFadeAndChangeSceneBedRoomMenuForNextGameLevel()
+    { 
+        try
+        {
+            SceneManager.GetSceneByName("Bedroom" + (GameManager.Instance.currentGameLevel + 1));
+            GameManager.Instance.ChangeMiniGame();
+
+            GameManager.Instance.currentPlayerMiniGame = 0;
+            StartCoroutine(DoWhenMainMenu("Bedroom"));
+        }
+        catch
+        {
+            GameManager.Instance.currentGameLevel = 0;
+            GameManager.Instance.currentPlayerMiniGame = 1;
+            SaveLoadJSON.Instance.SaveGame();
+
+            GameManager.Instance.currentPlayerMiniGame = 0;
+            StartCoroutine(DoWhenMainMenu("Bedroom"));
+        }
     }
 
     public void FadeIn(float duration)
@@ -104,6 +117,7 @@ public class FadeScene : MonoBehaviour
         // Add sound here
         //
         FadeOut(1f);
+        Debug.Log(sceneName);
         SceneManager.LoadScene(sceneName);
     }
     private IEnumerator DoWhenMainMenu(string sceneName)
