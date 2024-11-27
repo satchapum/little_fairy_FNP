@@ -44,7 +44,7 @@ public class TutorialSoundManager : Singleton<TutorialSoundManager>
         {
             KitchenForDoJobTutorial();
         }
-        else if (SceneManager.GetActiveScene().name == "Livingroom" + GameManager.Instance.currentGameLevel)
+        else if (SceneManager.GetActiveScene().name == "Garden" + GameManager.Instance.currentGameLevel)
         {
             LivingroomForDoJobTutorial();
         }
