@@ -1017,17 +1017,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b679f40239ed4664181dcb58f3e68fab, type: 3}
   - {fileID: 8300000, guid: b45303e57700fa9429705bdab83709c5, type: 3}
   arrangeFruitTutorialSound:
-  - {fileID: 8300000, guid: de9bebb652c812941bd422d8730bb1e0, type: 3}
-  - {fileID: 8300000, guid: de9bebb652c812941bd422d8730bb1e0, type: 3}
+  - {fileID: 8300000, guid: 123cee5b0ec956646a567a58e97331af, type: 3}
+  - {fileID: 8300000, guid: 166bafd75d55eed4bafc7753dc064635, type: 3}
   eatGruelTutorialSound:
+  - {fileID: 8300000, guid: 8adaca8438ae6c04ba19a722f54df6eb, type: 3}
   - {fileID: 8300000, guid: de9bebb652c812941bd422d8730bb1e0, type: 3}
-  - {fileID: 8300000, guid: de9bebb652c812941bd422d8730bb1e0, type: 3}
-  - {fileID: 8300000, guid: de9bebb652c812941bd422d8730bb1e0, type: 3}
+  - {fileID: 8300000, guid: 93c404989ba0f084eb6ad63e0381b3aa, type: 3}
   dishWashTutorialSound:
-  - {fileID: 8300000, guid: de9bebb652c812941bd422d8730bb1e0, type: 3}
-  - {fileID: 8300000, guid: de9bebb652c812941bd422d8730bb1e0, type: 3}
-  - {fileID: 8300000, guid: de9bebb652c812941bd422d8730bb1e0, type: 3}
-  - {fileID: 8300000, guid: de9bebb652c812941bd422d8730bb1e0, type: 3}
+  - {fileID: 8300000, guid: 073aff30af9fe47439dfbe947ba68cee, type: 3}
+  - {fileID: 8300000, guid: b9a21675b733df34fa6a5bebd632a177, type: 3}
+  - {fileID: 8300000, guid: f42fe2ae92d353b44904ce563f979efd, type: 3}
+  - {fileID: 8300000, guid: 054e85cd275a29a418963f497548192b, type: 3}
   wasteSortingTutorialSound: []
 --- !u!1 &3103328675658441902
 GameObject:
