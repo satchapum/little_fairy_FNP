@@ -14,6 +14,7 @@ enum TypeOfBin
 public class WasteBin : MonoBehaviour
 {
     [SerializeField] TypeOfBin binType = new TypeOfBin();
+    [SerializeField] GameObject positionToRandom;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -48,7 +49,8 @@ public class WasteBin : MonoBehaviour
 
             else 
             {
-                other.gameObject.transform.position = new Vector3(Random.Range(-14, -2), 0, Random.Range(-7, -9));
+                other.gameObject.transform.position = new Vector3(positionToRandom.transform.position.x + Random.Range(-0.5f,0.5f), positionToRandom.transform.position.y , positionToRandom.transform.position.z + Random.Range(-0.5f, 0.5f));
+
                 WasteManager.Instance.source.clip = WasteManager.Instance.clip_Fail;
                 WasteManager.Instance.source.Play();
             }
