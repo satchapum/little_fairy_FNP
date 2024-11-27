@@ -1227,7 +1227,7 @@ MonoBehaviour:
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
   _resetGrabOnGrabsUpdated: 1
-  _physicsGrabbable: {fileID: 0}
+  _physicsGrabbable: {fileID: 235626018}
 --- !u!114 &235626020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1246,7 +1246,7 @@ MonoBehaviour:
   _data: {fileID: 0}
   _pointableElement: {fileID: 235626021}
   _rigidbody: {fileID: 235626022}
-  _physicsGrabbable: {fileID: 0}
+  _physicsGrabbable: {fileID: 235626018}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
     _positionRotationWeight: 0.8
@@ -5036,7 +5036,7 @@ MonoBehaviour:
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
   _resetGrabOnGrabsUpdated: 1
-  _physicsGrabbable: {fileID: 0}
+  _physicsGrabbable: {fileID: 931293862}
 --- !u!114 &931293864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5055,7 +5055,7 @@ MonoBehaviour:
   _data: {fileID: 0}
   _pointableElement: {fileID: 931293865}
   _rigidbody: {fileID: 931293866}
-  _physicsGrabbable: {fileID: 0}
+  _physicsGrabbable: {fileID: 931293862}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
     _positionRotationWeight: 0.8
@@ -9195,7 +9195,7 @@ MonoBehaviour:
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
   _resetGrabOnGrabsUpdated: 1
-  _physicsGrabbable: {fileID: 0}
+  _physicsGrabbable: {fileID: 1939312447}
 --- !u!114 &1939312449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9214,7 +9214,7 @@ MonoBehaviour:
   _data: {fileID: 0}
   _pointableElement: {fileID: 1939312450}
   _rigidbody: {fileID: 1939312451}
-  _physicsGrabbable: {fileID: 0}
+  _physicsGrabbable: {fileID: 1939312447}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
     _positionRotationWeight: 0.8
@@ -10331,9 +10331,17 @@ PrefabInstance:
       value: "\u0E2B\u0E19\u0E31\u0E07\u0E2A\u0E37\u0E2D"
       objectReference: {fileID: 0}
     - target: {fileID: 8016448541873897116, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
+      propertyPath: m_fontSize
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016448541873897116, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 024e90b7efa0d77448df6140c9706331, type: 2}
+    - target: {fileID: 8016448541873897116, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 8016448541873897116, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
       propertyPath: m_sharedMaterial
       value: 
