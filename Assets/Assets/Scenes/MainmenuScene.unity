@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1071,7 +1071,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1936180340}
         m_TargetAssemblyTypeName: FadeScene, Assembly-CSharp
-        m_MethodName: DoFadeAndChangeSceneMainMenu
+        m_MethodName: DoFadeAndChangeSceneBedRoomMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1167,6 +1167,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: sweepFloorTutorialSound.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: dishWashTutorialSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: de9bebb652c812941bd422d8730bb1e0, type: 3}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: dishWashTutorialSound.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: de9bebb652c812941bd422d8730bb1e0, type: 3}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: dishWashTutorialSound.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: de9bebb652c812941bd422d8730bb1e0, type: 3}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: dishWashTutorialSound.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: de9bebb652c812941bd422d8730bb1e0, type: 3}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: eatGruelTutorialSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: de9bebb652c812941bd422d8730bb1e0, type: 3}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: eatGruelTutorialSound.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: de9bebb652c812941bd422d8730bb1e0, type: 3}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: eatGruelTutorialSound.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: de9bebb652c812941bd422d8730bb1e0, type: 3}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: sweepFloorTutorialSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: arrangeFruitTutorialSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: de9bebb652c812941bd422d8730bb1e0, type: 3}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: arrangeFruitTutorialSound.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: de9bebb652c812941bd422d8730bb1e0, type: 3}
     - target: {fileID: 5462330666589914153, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 4294967263

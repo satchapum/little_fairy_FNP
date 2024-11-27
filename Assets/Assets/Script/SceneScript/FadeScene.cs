@@ -25,6 +25,11 @@ public class FadeScene : MonoBehaviour
         StartFade();
     }
 
+    public void DoFadeSaveAndChangeSceneToMainMenu()
+    {
+
+    }
+
     public void StartFade()
     {
         int currentMiniGame = GameManager.Instance.currentPlayerMiniGame;
@@ -39,16 +44,15 @@ public class FadeScene : MonoBehaviour
         }
         else if (currentMiniGame > 4 && currentMiniGame < 6)
         {
-            StartCoroutine(DoWhenFade("Livingroom" + GameManager.Instance.currentGameLevel));
+            StartCoroutine(DoWhenFade("Garden" + GameManager.Instance.currentGameLevel));
         }
     }
 
-    public void DoFadeAndChangeSceneMainMenu()
-    {
-        Debug.Log("test");
+    public void DoFadeAndChangeSceneBedRoomMenu()
+    { 
         GameManager.Instance.currentPlayerMiniGame = 0;
         
-        StartCoroutine(DoWhenMainMenu("Bedroom" + 0));
+        StartCoroutine(DoWhenMainMenu("Bedroom"));
     }
 
     public void FadeIn(float duration)

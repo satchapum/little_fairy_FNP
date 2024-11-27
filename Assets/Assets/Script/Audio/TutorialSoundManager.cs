@@ -26,8 +26,8 @@ public class TutorialSoundManager : Singleton<TutorialSoundManager>
     [Header("DishWashTutorialSound")]
     [SerializeField] List<AudioClip> dishWashTutorialSound;
 
-    [Header("sweepFloorTutorialSound")]
-    [SerializeField] List<AudioClip> sweepFloorTutorialSound;
+    [Header("wasteSortingTutorialSound")]
+    [SerializeField] List<AudioClip> wasteSortingTutorialSound;
 
 
     public void CheckCurrentScene()
@@ -109,10 +109,10 @@ public class TutorialSoundManager : Singleton<TutorialSoundManager>
 
     void LivingroomForDoJobTutorial()
     {
-        soundSource.clip = sweepFloorTutorialSound[currentNumberOfSoundTrack];
+        soundSource.clip = wasteSortingTutorialSound[currentNumberOfSoundTrack];
         soundSource.Play();
         currentNumberOfSoundTrack++;
-        if (currentNumberOfSoundTrack >= sweepFloorTutorialSound.Count)
+        if (currentNumberOfSoundTrack >= wasteSortingTutorialSound.Count)
         {
             currentNumberOfSoundTrack = 0;
         }
