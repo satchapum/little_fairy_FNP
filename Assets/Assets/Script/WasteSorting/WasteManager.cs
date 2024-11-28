@@ -29,11 +29,13 @@ public class WasteManager : Singleton<WasteManager>
     }
     public void UpdateTextStatus()
     {
-        statusText.text = "จำนวนขยะที่ยังเหลืออยู่ " + numberOfHazardousWaste + numberOfRecycleWaste + numberOfWetWaste + numberOfGeneralWaste;
+        statusText.text = "จำนวนขยะที่ยังเหลืออยู่ " + (numberOfHazardousWaste + numberOfRecycleWaste + numberOfWetWaste + numberOfGeneralWaste);
     }
 
     private void Update()
     {
+        UpdateTextStatus();
+
         if (numberOfHazardousWaste + numberOfRecycleWaste + numberOfWetWaste + numberOfGeneralWaste == 0) 
         {
             poseToGoNext.SetActive(true);

@@ -30,8 +30,7 @@ public class FadeScene : MonoBehaviour
     public void DoFadeSaveAndChangeSceneToMainMenu()
     {
         SaveLoadJSON.Instance.SaveGame();
-
-        DoWhenFade("MainmenuScene");
+        StartCoroutine(DoWhenFade("MainmenuScene"));
 
     }
 
@@ -67,7 +66,7 @@ public class FadeScene : MonoBehaviour
             GameManager.Instance.ChangeMiniGame();
 
             GameManager.Instance.currentPlayerMiniGame = 0;
-            StartCoroutine(DoWhenMainMenu("Bedroom"));
+            StartCoroutine(DoWhenFade("Bedroom"));
         }
         catch
         {
@@ -76,7 +75,7 @@ public class FadeScene : MonoBehaviour
             SaveLoadJSON.Instance.SaveGame();
 
             GameManager.Instance.currentPlayerMiniGame = 0;
-            StartCoroutine(DoWhenMainMenu("Bedroom"));
+            StartCoroutine(DoWhenFade("Bedroom"));
         }
     }
 
