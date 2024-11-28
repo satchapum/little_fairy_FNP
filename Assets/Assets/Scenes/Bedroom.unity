@@ -452,6 +452,58 @@ PrefabInstance:
       propertyPath: soundSource
       value: 
       objectReference: {fileID: 82690788}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: whenAwakeTutorialSound.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: arrangeBookTutorialSound.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: eatGruelTutorialSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d1d59019b8963d14e9a4b9ce161c6e7a, type: 3}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: eatGruelTutorialSound.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0ff94c9431d159440b1d3f6f0a66e184, type: 3}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: eatGruelTutorialSound.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e7c2e9768cba2e43a5419a69bdce4c4, type: 3}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: wasteSortingTutorialSound.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: whenAwakeTutorialSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 68330e207b6b6e0479b1536e86696ecb, type: 3}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: arrangeBookTutorialSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6922871a00613d64ead1ab618c41e83d, type: 3}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: arrangeBookTutorialSound.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 998bcf3c3f1734f4e8769b5ab2f65714, type: 3}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: arrangeFruitTutorialSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c6d9974c1b141cc449f2b43c033887eb, type: 3}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: arrangeFruitTutorialSound.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6577c118507ab024dbd60519200f2086, type: 3}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: wasteSortingTutorialSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 777528e8e684c2a4597e1b271fb10cf9, type: 3}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: wasteSortingTutorialSound.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 458781c3dbddcfe439ad4f4ff0864e9c, type: 3}
     - target: {fileID: 5811807988343366359, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0

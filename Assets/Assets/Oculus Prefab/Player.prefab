@@ -277,6 +277,7 @@ GameObject:
   - component: {fileID: 2211049133525526201}
   - component: {fileID: 4119789392726017565}
   - component: {fileID: 4520661153829669015}
+  - component: {fileID: 6522418508060618833}
   m_Layer: 0
   m_Name: Panel
   m_TagString: Untagged
@@ -349,6 +350,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SendPointerHoverToParent: 1
   _useInitialPressPositionForDrag: 1
+--- !u!64 &6522418508060618833
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683165975589022776}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &1686723274111011932
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,7 +784,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5982313305302072613, guid: 1dd706bb85d8aef4e83a6229dbd62c36, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1009,26 +1032,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42f2aba081582ce4fbd4d0bd818a9a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundSource: {fileID: 0}
+  soundSource: {fileID: 5811807988343366359}
   currentNumberOfSoundTrack: 0
-  whenAwakeTutorialSound: []
+  whenAwakeTutorialSound:
+  - {fileID: 8300000, guid: 68330e207b6b6e0479b1536e86696ecb, type: 3}
   arrangeBookTutorialSound:
-  - {fileID: 8300000, guid: 5945c63b267baca4abee009e0ddaf466, type: 3}
-  - {fileID: 8300000, guid: b679f40239ed4664181dcb58f3e68fab, type: 3}
-  - {fileID: 8300000, guid: b45303e57700fa9429705bdab83709c5, type: 3}
+  - {fileID: 8300000, guid: 6922871a00613d64ead1ab618c41e83d, type: 3}
+  - {fileID: 8300000, guid: 998bcf3c3f1734f4e8769b5ab2f65714, type: 3}
   arrangeFruitTutorialSound:
-  - {fileID: 8300000, guid: 123cee5b0ec956646a567a58e97331af, type: 3}
-  - {fileID: 8300000, guid: 166bafd75d55eed4bafc7753dc064635, type: 3}
+  - {fileID: 8300000, guid: c6d9974c1b141cc449f2b43c033887eb, type: 3}
+  - {fileID: 8300000, guid: 6577c118507ab024dbd60519200f2086, type: 3}
   eatGruelTutorialSound:
-  - {fileID: 8300000, guid: 8adaca8438ae6c04ba19a722f54df6eb, type: 3}
-  - {fileID: 8300000, guid: de9bebb652c812941bd422d8730bb1e0, type: 3}
-  - {fileID: 8300000, guid: 93c404989ba0f084eb6ad63e0381b3aa, type: 3}
+  - {fileID: 8300000, guid: d1d59019b8963d14e9a4b9ce161c6e7a, type: 3}
+  - {fileID: 8300000, guid: 0ff94c9431d159440b1d3f6f0a66e184, type: 3}
+  - {fileID: 8300000, guid: 6e7c2e9768cba2e43a5419a69bdce4c4, type: 3}
   dishWashTutorialSound:
   - {fileID: 8300000, guid: 073aff30af9fe47439dfbe947ba68cee, type: 3}
   - {fileID: 8300000, guid: b9a21675b733df34fa6a5bebd632a177, type: 3}
   - {fileID: 8300000, guid: f42fe2ae92d353b44904ce563f979efd, type: 3}
   - {fileID: 8300000, guid: 054e85cd275a29a418963f497548192b, type: 3}
-  wasteSortingTutorialSound: []
+  wasteSortingTutorialSound:
+  - {fileID: 8300000, guid: 777528e8e684c2a4597e1b271fb10cf9, type: 3}
+  - {fileID: 8300000, guid: 458781c3dbddcfe439ad4f4ff0864e9c, type: 3}
 --- !u!1 &3103328675658441902
 GameObject:
   m_ObjectHideFlags: 0
