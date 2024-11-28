@@ -25,6 +25,8 @@ public class SpawnPosition : Singleton<SpawnPosition>
             {
                 playerObject.transform.position = positionNumber.transform.position;
                 playerObject.transform.rotation = positionNumber.transform.rotation;
+
+                Debug.Log("ChangeposeTo"+ positionNumber.name);
             }
         }
     }

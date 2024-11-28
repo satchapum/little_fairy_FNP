@@ -6,6 +6,7 @@ public class PlaySoundWhenFinish : MonoBehaviour
 {
     private void Start()
     {
+        
         TutorialSoundManager.Instance.CheckCurrentScene();
     }
 }
