@@ -454,8 +454,12 @@ PrefabInstance:
       objectReference: {fileID: 82690786}
     - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
       propertyPath: whenAwakeTutorialSound.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5385153557103635726, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: whenAwakeTutorialSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 68330e207b6b6e0479b1536e86696ecb, type: 3}
     - target: {fileID: 9005311846688391821, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
       propertyPath: m_Name
       value: Player
