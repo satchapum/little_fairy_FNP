@@ -46,7 +46,7 @@ public class TutorialSoundManager : Singleton<TutorialSoundManager>
         }
         else if (SceneManager.GetActiveScene().name == "Garden" + GameManager.Instance.currentGameLevel)
         {
-            LivingroomForDoJobTutorial();
+            GardenForDoJobTutorial();
         }
 
     }
@@ -107,7 +107,7 @@ public class TutorialSoundManager : Singleton<TutorialSoundManager>
         }
     }
 
-    void LivingroomForDoJobTutorial()
+    void GardenForDoJobTutorial()
     {
         soundSource.clip = wasteSortingTutorialSound[currentNumberOfSoundTrack];
         soundSource.Play();

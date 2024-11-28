@@ -23,11 +23,24 @@ public class SpawnPosition : Singleton<SpawnPosition>
 
             if (currentMiniGame == positionMiniGame)
             {
-                playerObject.transform.position = positionNumber.transform.position;
+                /*playerObject.transform.position = positionNumber.transform.position;
                 playerObject.transform.rotation = positionNumber.transform.rotation;
 
-                Debug.Log("ChangeposeTo"+ positionNumber.name);
+                Debug.Log("ChangeposeTo"+ positionNumber.name);*/
+                Rigidbody rb = playerObject.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    rb.MovePosition(positionNumber.transform.position);
+                    rb.MoveRotation(positionNumber.transform.rotation);
+                }
+                else
+                {
+                    playerObject.transform.position = positionNumber.transform.position;
+                    playerObject.transform.rotation = positionNumber.transform.rotation;
+                }
             }
+
+            
         }
     }
 }

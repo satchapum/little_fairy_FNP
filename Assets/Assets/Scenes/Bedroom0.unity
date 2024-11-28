@@ -172,7 +172,7 @@ MonoBehaviour:
   spawnPosition:
   - {fileID: 424526414}
   - {fileID: 1755324497}
-  playerObject: {fileID: 732013769}
+  playerObject: {fileID: 82690787}
 --- !u!1 &71004938
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,6 +472,11 @@ PrefabInstance:
 --- !u!82 &82690786 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 5811807988343366359, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+  m_PrefabInstance: {fileID: 82690785}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &82690787 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9005311846688391821, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
   m_PrefabInstance: {fileID: 82690785}
   m_PrefabAsset: {fileID: 0}
 --- !u!225 &96634614 stripped
@@ -4145,11 +4150,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5a2680ad176564741b9b6393ee77a5de, type: 3}
   m_PrefabInstance: {fileID: 678592668}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &732013769 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9005311846688391821, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
-  m_PrefabInstance: {fileID: 82690785}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &745470118
 PrefabInstance:

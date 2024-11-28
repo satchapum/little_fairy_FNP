@@ -172,7 +172,7 @@ MonoBehaviour:
   spawnPosition:
   - {fileID: 424526414}
   - {fileID: 1755324497}
-  playerObject: {fileID: 732013769}
+  playerObject: {fileID: 82690786}
 --- !u!1 &71004938
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +457,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+--- !u!1 &82690786 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9005311846688391821, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+  m_PrefabInstance: {fileID: 82690785}
+  m_PrefabAsset: {fileID: 0}
 --- !u!225 &96634614 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 5789735772466256267, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
@@ -3831,11 +3836,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 528535498975744754, guid: ff8bf27806498b14db60a3c20a21eec2, type: 3}
   m_PrefabInstance: {fileID: 717424424}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &732013769 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9005311846688391821, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
-  m_PrefabInstance: {fileID: 82690785}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &745809787
 GameObject:
