@@ -53,7 +53,7 @@ public class GameManager : Singleton<GameManager>
                 currentPlayerMiniGame = 1;
                 SetPlayerDataToSO();
                 SaveLoadJSON.Instance.SaveGame();
-                currentPlayerMiniGame = 1;
+                currentPlayerMiniGame = 0;
             }
         }
         else
