@@ -173,6 +173,7 @@ MonoBehaviour:
   - {fileID: 424526414}
   - {fileID: 1755324497}
   playerObject: {fileID: 82690787}
+  playerOVR: {fileID: 82690788}
 --- !u!1 &71004938
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,6 +480,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9005311846688391821, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
   m_PrefabInstance: {fileID: 82690785}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &82690788 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5462330666582783859, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+  m_PrefabInstance: {fileID: 82690785}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0950df82e7936c84983497630bde5b54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!225 &96634614 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 5789735772466256267, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
