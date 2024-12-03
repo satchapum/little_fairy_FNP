@@ -23,7 +23,7 @@ public class WasteManager : Singleton<WasteManager>
     [SerializeField] public int numberOfWetWaste;
     [SerializeField] public int numberOfGeneralWaste;
 
-    private void Awake()
+    private void Start()
     {
         TutorialSoundManager.Instance.CheckCurrentScene();
     }
@@ -34,7 +34,6 @@ public class WasteManager : Singleton<WasteManager>
 
     private void Update()
     {
-        UpdateTextStatus();
 
         if (numberOfHazardousWaste + numberOfRecycleWaste + numberOfWetWaste + numberOfGeneralWaste == 0) 
         {
@@ -46,6 +45,10 @@ public class WasteManager : Singleton<WasteManager>
                 statusText.text = "ครบแล้วนะ";
                 TutorialSoundManager.Instance.CheckCurrentScene();
             }
+        }
+        else
+        {
+            UpdateTextStatus();
         }
     }
 }

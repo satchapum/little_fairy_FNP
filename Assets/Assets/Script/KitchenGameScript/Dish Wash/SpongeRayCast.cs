@@ -54,20 +54,21 @@ public class SpongeRayCast : Singleton<SpongeRayCast>
     }
     public void ChangeSpongeModel(string inputObject)
     {
-        if (isSpongeWet || isSpongeHaveSoap)
-        {
-            ChangeSpongeModelToSoapAndWet();
-
-            //Add Audio Here
-            TutorialSoundManager.Instance.KitchenForDoJobTutorial();
-        }
-        else if (inputObject == "Water")
+        if (inputObject == "Water")
         {
             ChangeSpongeModelToWet();
         }
         else if (inputObject == "Soap")
         {
             ChangeSpongeModelToSoap();
+        }
+        else if (isSpongeWet || isSpongeHaveSoap)
+        {
+            
+            ChangeSpongeModelToSoapAndWet();
+
+            //Add Audio Here
+            TutorialSoundManager.Instance.KitchenForDoJobTutorial();
         }
     }
 
