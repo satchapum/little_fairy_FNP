@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -39,8 +40,16 @@ public class GameManager : Singleton<GameManager>
     {
         if (currentPlayerMiniGame >= maxNumberOfMiniGame)
         {
-            currentGameLevel++;
-            currentPlayerMiniGame = 1;
+            if (SceneManager.GetSceneByName("Bedroom"+ (currentGameLevel+1)).IsValid())
+            {
+                currentGameLevel++;
+                currentPlayerMiniGame = 1;
+            }
+            else
+            {
+                currentGameLevel = 0;
+                currentPlayerMiniGame = 1;
+            }
         }
         else
         {

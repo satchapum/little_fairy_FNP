@@ -102,21 +102,7 @@ public class FadeScene : MonoBehaviour
         // Add sound here
         //
         FadeOut(1f);
-        Debug.Log(sceneName);
-        if (SceneManager.GetSceneByName(sceneName).IsValid())
-        {
-            SceneManager.LoadScene(sceneName);
-        }
-        else
-        {
-            GameManager.Instance.currentGameLevel = 0;
-            GameManager.Instance.currentPlayerMiniGame = 1;
-            GameManager.Instance.SetPlayerDataToSO();
-            SaveLoadJSON.Instance.SaveGame();
-
-            GameManager.Instance.currentPlayerMiniGame = 0;
-            SceneManager.LoadScene("Bedroom0");
-        }
+        SceneManager.LoadScene(sceneName);
     }
     private IEnumerator DoWhenMainMenu(string sceneName)
     {
