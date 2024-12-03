@@ -6,6 +6,7 @@ public class SpawnPosition : Singleton<SpawnPosition>
 {
     [SerializeField] List<GameObject> spawnPosition;
     [SerializeField] GameObject playerObject;
+    [SerializeField] OVRPlayerController playerOVR;
 
     private void Start()
     {
@@ -35,11 +36,10 @@ public class SpawnPosition : Singleton<SpawnPosition>
                 }
                 else
                 {
-                    var playerObject = GetComponentInChildren<OVRPlayerController>();
-                    playerObject.enabled = false;
+                    playerOVR.enabled = false;
                     playerObject.transform.position = positionNumber.transform.position;
                     playerObject.transform.rotation = positionNumber.transform.rotation;
-                    playerObject.enabled = true;
+                    playerOVR.enabled = true;
                 }
             }
         }
