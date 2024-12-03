@@ -103,11 +103,11 @@ public class FadeScene : MonoBehaviour
         //
         FadeOut(1f);
         Debug.Log(sceneName);
-        try
+        if (SceneManager.GetSceneByName(sceneName).IsValid())
         {
             SceneManager.LoadScene(sceneName);
         }
-        catch
+        else
         {
             GameManager.Instance.currentGameLevel = 0;
             GameManager.Instance.currentPlayerMiniGame = 1;
