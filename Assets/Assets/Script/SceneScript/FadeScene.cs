@@ -60,15 +60,11 @@ public class FadeScene : MonoBehaviour
     }
     public void DoFadeAndChangeSceneBedRoomMenuForNextGameLevel()
     { 
-        try
-        {
-            GameManager.Instance.ChangeMiniGame();
-            GameManager.Instance.currentPlayerMiniGame = 0;
+        GameManager.Instance.ChangeMiniGame();
+        GameManager.Instance.currentPlayerMiniGame = 0;
 
-            SceneManager.LoadScene("Bedroom" + (GameManager.Instance.currentGameLevel + 1));
-            StartCoroutine(DoWhenFade("Bedroom"));
-        }
-        
+        SceneManager.LoadScene("Bedroom" + (GameManager.Instance.currentGameLevel + 1));
+        StartCoroutine(DoWhenFade("Bedroom"));
     }
 
     public void FadeIn(float duration)
