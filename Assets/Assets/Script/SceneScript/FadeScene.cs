@@ -62,8 +62,6 @@ public class FadeScene : MonoBehaviour
     { 
         GameManager.Instance.ChangeMiniGame();
         GameManager.Instance.currentPlayerMiniGame = 0;
-
-        SceneManager.LoadScene("Bedroom" + (GameManager.Instance.currentGameLevel + 1));
         StartCoroutine(DoWhenFade("Bedroom"));
     }
 
