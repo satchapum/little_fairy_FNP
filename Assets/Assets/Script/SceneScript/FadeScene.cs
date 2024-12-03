@@ -62,26 +62,13 @@ public class FadeScene : MonoBehaviour
     { 
         try
         {
-            SceneManager.GetSceneByName("Bedroom" + (GameManager.Instance.currentGameLevel + 1));
-            
-            if (SceneManager.GetSceneByName("Bedroom" + (GameManager.Instance.currentGameLevel + 1)) != null)
-            {
-                GameManager.Instance.ChangeMiniGame();
-                GameManager.Instance.currentPlayerMiniGame = 0;
-                StartCoroutine(DoWhenFade("Bedroom"));
-            }
-            
-        }
-        catch
-        {
-            GameManager.Instance.currentGameLevel = 0;
-            GameManager.Instance.currentPlayerMiniGame = 1;
-            GameManager.Instance.SetPlayerDataToSO();
-            SaveLoadJSON.Instance.SaveGame();
-
+            GameManager.Instance.ChangeMiniGame();
             GameManager.Instance.currentPlayerMiniGame = 0;
+
+            SceneManager.LoadScene("Bedroom" + (GameManager.Instance.currentGameLevel + 1));
             StartCoroutine(DoWhenFade("Bedroom"));
         }
+        
     }
 
     public void FadeIn(float duration)
@@ -122,7 +109,20 @@ public class FadeScene : MonoBehaviour
         //
         FadeOut(1f);
         Debug.Log(sceneName);
-        SceneManager.LoadScene(sceneName);
+        try
+        {
+            SceneManager.LoadScene(sceneName);
+        }
+        catch
+        {
+            GameManager.Instance.currentGameLevel = 0;
+            GameManager.Instance.currentPlayerMiniGame = 1;
+            GameManager.Instance.SetPlayerDataToSO();
+            SaveLoadJSON.Instance.SaveGame();
+
+            GameManager.Instance.currentPlayerMiniGame = 0;
+            SceneManager.LoadScene("Bedroom0");
+        }
     }
     private IEnumerator DoWhenMainMenu(string sceneName)
     {
