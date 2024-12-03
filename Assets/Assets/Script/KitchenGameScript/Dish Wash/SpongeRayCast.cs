@@ -54,11 +54,11 @@ public class SpongeRayCast : Singleton<SpongeRayCast>
     }
     public void ChangeSpongeModel(string inputObject)
     {
-        if (inputObject == "Water" && !isSpongeWet)
+        if (inputObject == "Water" && !isSpongeHaveSoap)
         {
             ChangeSpongeModelToWet();
         }
-        else if (inputObject == "Soap" && !isSpongeHaveSoap)
+        else if (inputObject == "Soap" && !isSpongeWet)
         {
             ChangeSpongeModelToSoap();
         }
