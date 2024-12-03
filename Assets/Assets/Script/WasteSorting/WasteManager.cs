@@ -39,12 +39,7 @@ public class WasteManager : Singleton<WasteManager>
         {
             poseToGoNext.SetActive(true);
             IsGameFinish = true;
-            if (numberOfPlaySound == 0)
-            {
-                numberOfPlaySound++;
-                statusText.text = "ครบแล้วนะ";
-                TutorialSoundManager.Instance.CheckCurrentScene();
-            }
+            statusText.text = "ครบแล้วนะ";
         }
         else
         {
