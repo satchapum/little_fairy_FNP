@@ -44,18 +44,24 @@ public class GameManager : Singleton<GameManager>
             {
                 currentGameLevel++;
                 currentPlayerMiniGame = 1;
+                SetPlayerDataToSO();
+                SaveLoadJSON.Instance.SaveGame();
             }
             else
             {
                 currentGameLevel = 0;
+                currentPlayerMiniGame = 1;
+                SetPlayerDataToSO();
+                SaveLoadJSON.Instance.SaveGame();
                 currentPlayerMiniGame = 1;
             }
         }
         else
         {
             currentPlayerMiniGame++;
+            SetPlayerDataToSO();
+            SaveLoadJSON.Instance.SaveGame();
         }
-        SetPlayerDataToSO();
-        SaveLoadJSON.Instance.SaveGame();
+        
     }
 }
