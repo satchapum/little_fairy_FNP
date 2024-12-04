@@ -7,6 +7,9 @@ public class SpawnPosition : Singleton<SpawnPosition>
     [SerializeField] List<GameObject> spawnPosition;
     [SerializeField] GameObject playerObject;
     [SerializeField] OVRPlayerController playerOVR;
+    [SerializeField] GameObject targetPostion;
+
+    int timeTosetPosition = 0;
 
     private void Start()
     {
@@ -24,24 +27,21 @@ public class SpawnPosition : Singleton<SpawnPosition>
 
             if (currentMiniGame == positionMiniGame)
             {
-                /*playerObject.transform.position = positionNumber.transform.position;
+                targetPostion = positionNumber;
+                playerOVR.enabled = false;
+                playerObject.transform.position = positionNumber.transform.position;
                 playerObject.transform.rotation = positionNumber.transform.rotation;
-
-                Debug.Log("ChangeposeTo"+ positionNumber.name);*/
-                Rigidbody rb = playerObject.GetComponent<Rigidbody>();
-                if (rb != null)
-                {
-                    rb.MovePosition(positionNumber.transform.position);
-                    rb.MoveRotation(positionNumber.transform.rotation);
-                }
-                else
-                {
-                    playerOVR.enabled = false;
-                    playerObject.transform.position = positionNumber.transform.position;
-                    playerObject.transform.rotation = positionNumber.transform.rotation;
-                    playerOVR.enabled = true;
-                }
+                playerOVR.enabled = true;
             }
+        }
+    }
+    void Update() 
+    {
+        if ((playerObject.transform.position != targetPostion.transform.position) && timeTosetPosition < 1) 
+        {
+            timeTosetPosition++;
+            playerObject.transform.position = targetPostion.transform.position;
+            playerObject.transform.rotation = targetPostion.transform.rotation;
         }
     }
 }
