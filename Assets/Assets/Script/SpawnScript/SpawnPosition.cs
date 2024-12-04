@@ -37,12 +37,7 @@ public class SpawnPosition : Singleton<SpawnPosition>
     }
     void Update() 
     {
-        playerOVR.enabled = false;
-        playerObject.transform.position = targetPostion.transform.position;
-        playerObject.transform.rotation = targetPostion.transform.rotation;
-        playerOVR.enabled = true;
-
-        if ((playerObject.transform.position != targetPostion.transform.position) && timeTosetPosition < 1) 
+        if (((playerObject.transform.position.x != targetPostion.transform.position.x) && (playerObject.transform.position.y != targetPostion.transform.position.y)) && timeTosetPosition < 1) 
         {
             timeTosetPosition++;
             playerOVR.enabled = false;
