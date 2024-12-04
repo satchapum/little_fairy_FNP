@@ -11711,6 +11711,7 @@ MonoBehaviour:
   - {fileID: 214809904}
   playerObject: {fileID: 833877789}
   playerOVR: {fileID: 924961093}
+  targetPostion: {fileID: 1455182767}
 --- !u!4 &1455182769
 Transform:
   m_ObjectHideFlags: 0
