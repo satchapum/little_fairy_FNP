@@ -40,8 +40,10 @@ public class SpawnPosition : Singleton<SpawnPosition>
         if ((playerObject.transform.position != targetPostion.transform.position) && timeTosetPosition < 1) 
         {
             timeTosetPosition++;
+            playerOVR.enabled = false;
             playerObject.transform.position = targetPostion.transform.position;
             playerObject.transform.rotation = targetPostion.transform.rotation;
+            playerOVR.enabled = true;
         }
     }
 }
