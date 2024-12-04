@@ -6,7 +6,6 @@ public class SpawnPosition : Singleton<SpawnPosition>
 {
     [SerializeField] List<GameObject> spawnPosition;
     [SerializeField] GameObject playerObject;
-    [SerializeField] GameObject playerOVRObject; 
     [SerializeField] OVRPlayerController playerOVR;
     [SerializeField] GameObject targetPostion;
 
@@ -40,13 +39,13 @@ public class SpawnPosition : Singleton<SpawnPosition>
     void Update() 
     {
         Debug.Log(playerObject.transform.position);
-        if (((playerOVRObject.transform.position.x != targetPostion.transform.position.x) || (playerOVRObject.transform.position.y != targetPostion.transform.position.y)) && timeTosetPosition < 1) 
+        if (((playerObject.transform.position.x != targetPostion.transform.position.x) || (playerOVRObject.transform.position.y != targetPostion.transform.position.y)) && timeTosetPosition < 1) 
         {
             timeTosetPosition++;
             playerOVR.enabled = false;
 
-            playerOVRObject.transform.position = targetPostion.transform.position;
-            playerOVRObject.transform.rotation = targetPostion.transform.rotation;
+            playerObject.transform.position = targetPostion.transform.position;
+            playerObject.transform.rotation = targetPostion.transform.rotation;
 
             playerOVR.enabled = true;
         }
