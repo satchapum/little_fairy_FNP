@@ -16,6 +16,7 @@ public class SpawnPosition : Singleton<SpawnPosition>
         setPosition();
     }
 
+    [ContextMenu("setPositiontest")]
     public void setPosition()
     {
         int currentMiniGame = GameManager.Instance.currentPlayerMiniGame;
@@ -37,10 +38,12 @@ public class SpawnPosition : Singleton<SpawnPosition>
     }
     void Update() 
     {
-        if (((playerObject.transform.position.x != targetPostion.transform.position.x) && (playerObject.transform.position.y != targetPostion.transform.position.y)) && timeTosetPosition < 1) 
+        Debug.Log(playerObject.transform.position);
+        if (((playerObject.transform.position.x != targetPostion.transform.position.x) || (playerObject.transform.position.y != targetPostion.transform.position.y)) && timeTosetPosition < 1) 
         {
             timeTosetPosition++;
             playerOVR.enabled = false;
+            
             playerObject.transform.position = targetPostion.transform.position;
             playerObject.transform.rotation = targetPostion.transform.rotation;
             playerOVR.enabled = true;
