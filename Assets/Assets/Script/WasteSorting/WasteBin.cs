@@ -42,11 +42,9 @@ public class WasteBin : MonoBehaviour
                 {
                     WasteManager.Instance.numberOfGeneralWaste--;
                 }
-                if () 
-                {
-                    WasteManager.Instance.source.clip = WasteManager.Instance.clip_Pass;
-                    WasteManager.Instance.source.Play();
-                }
+                
+                WasteManager.Instance.source.clip = WasteManager.Instance.clip_Pass;
+                WasteManager.Instance.source.Play();
                 
             }
 

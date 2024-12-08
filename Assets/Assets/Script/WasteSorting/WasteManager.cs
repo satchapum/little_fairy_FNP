@@ -40,6 +40,7 @@ public class WasteManager : Singleton<WasteManager>
             poseToGoNext.SetActive(true);
             IsGameFinish = true;
             statusText.text = "ครบแล้วนะ";
+            source.Stop();
         }
         else
         {
