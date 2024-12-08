@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.Audio;
 
 public class SpongeRayCast : Singleton<SpongeRayCast>
 {
@@ -67,7 +68,7 @@ public class SpongeRayCast : Singleton<SpongeRayCast>
             ChangeSpongeModelToSoapAndWet();
 
             //Add Audio Here
-            TutorialSoundManager.Instance.CheckCurrentScene();
+            TutorialSoundManager.Instance.KitchenForDoJobTutorial();
         }
     }
 

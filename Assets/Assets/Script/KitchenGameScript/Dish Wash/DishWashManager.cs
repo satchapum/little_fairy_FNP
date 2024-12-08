@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using OpenCover.Framework.Model;
 
 public class DishWashManager : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class DishWashManager : MonoBehaviour
 
     private void Start()
     {
-        TutorialSoundManager.Instance.CheckCurrentScene();
+        TutorialSoundManager.Instance.KitchenForDoJobTutorial();
         isGameFinish = false;
         CheckDishGrab();
     }
@@ -125,7 +126,7 @@ public class DishWashManager : MonoBehaviour
             if (timeToplayAudio == 0)
             {
                 timeToplayAudio++;
-                TutorialSoundManager.Instance.CheckCurrentScene();
+                TutorialSoundManager.Instance.KitchenForDoJobTutorial();
             }
         }
    
