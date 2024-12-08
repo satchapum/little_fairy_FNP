@@ -7015,6 +7015,10 @@ PrefabInstance:
       value: Digital_Clock
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c6cfce014a248ac41a9868fbe281e25d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c6cfce014a248ac41a9868fbe281e25d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -7650,7 +7654,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1624206954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10156,6 +10160,10 @@ PrefabInstance:
     - target: {fileID: 9038581671257783211, guid: 91150c7541786f24c9f8f5c58da462c4, type: 3}
       propertyPath: m_Name
       value: MiniGameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038581671257783211, guid: 91150c7541786f24c9f8f5c58da462c4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

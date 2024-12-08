@@ -17,7 +17,7 @@ public class DishWashManager : MonoBehaviour
 
     private void Start()
     {
-        TutorialSoundManager.Instance.KitchenForDoJobTutorial();
+        TutorialSoundManager.Instance.CheckCurrentScene();
         isGameFinish = false;
         CheckDishGrab();
     }
@@ -126,7 +126,7 @@ public class DishWashManager : MonoBehaviour
             if (timeToplayAudio == 0)
             {
                 timeToplayAudio++;
-                TutorialSoundManager.Instance.KitchenForDoJobTutorial();
+                TutorialSoundManager.Instance.CheckCurrentScene();
             }
         }
    

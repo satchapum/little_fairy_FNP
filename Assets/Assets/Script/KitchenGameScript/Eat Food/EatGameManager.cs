@@ -17,7 +17,7 @@ public class EatGameManager : Singleton<EatGameManager>
     void Start()
     {
         Debug.Log(isThisMiniGameFinish +"  " + isEatStateFinish);
-        TutorialSoundManager.Instance.KitchenForDoJobTutorial();
+        TutorialSoundManager.Instance.CheckCurrentScene();
         grabblePlate.SetActive(false);
         inGrabblePlate.SetActive(true);
     }
@@ -31,7 +31,7 @@ public class EatGameManager : Singleton<EatGameManager>
             {
                 Debug.Log(isThisMiniGameFinish + "  " + isEatStateFinish);
                 numberOfSoundplayAndSetObject++;
-                TutorialSoundManager.Instance.KitchenForDoJobTutorial();
+                TutorialSoundManager.Instance.CheckCurrentScene();
                 canvasShowFinish.text = "นําจานไปวางที่ซิงค์ล้างจาน";
                 grabblePlate.SetActive(true);
                 inGrabblePlate.SetActive(false);
