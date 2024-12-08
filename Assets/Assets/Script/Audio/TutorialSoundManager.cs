@@ -76,7 +76,7 @@ public class TutorialSoundManager : Singleton<TutorialSoundManager>
     {
         if (GameManager.Instance.currentPlayerMiniGame == 2)
         {
-            Debug.Log(arrangeFruitTutorialSound[currentNumberOfSoundTrack]);
+            Debug.Log("2"+arrangeFruitTutorialSound[currentNumberOfSoundTrack]);
             soundSource.clip = arrangeFruitTutorialSound[currentNumberOfSoundTrack];
             soundSource.Play();
             currentNumberOfSoundTrack++;
@@ -87,7 +87,7 @@ public class TutorialSoundManager : Singleton<TutorialSoundManager>
         }
         else if (GameManager.Instance.currentPlayerMiniGame == 3)
         {
-            Debug.Log(eatGruelTutorialSound[currentNumberOfSoundTrack]);
+            Debug.Log("3" + eatGruelTutorialSound[currentNumberOfSoundTrack]);
             soundSource.clip = eatGruelTutorialSound[currentNumberOfSoundTrack];
             soundSource.Play();
             currentNumberOfSoundTrack++;
@@ -98,7 +98,7 @@ public class TutorialSoundManager : Singleton<TutorialSoundManager>
         }
         else if (GameManager.Instance.currentPlayerMiniGame == 4)
         {
-            Debug.Log(dishWashTutorialSound[currentNumberOfSoundTrack]);
+            Debug.Log("4" + dishWashTutorialSound[currentNumberOfSoundTrack]);
             soundSource.clip = dishWashTutorialSound[currentNumberOfSoundTrack];
             soundSource.Play();
             currentNumberOfSoundTrack++;
