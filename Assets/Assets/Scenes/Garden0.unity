@@ -8114,7 +8114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8016448541873897116, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
       propertyPath: m_fontSize
-      value: 150
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 8016448541873897116, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
       propertyPath: m_fontAsset
@@ -8134,7 +8134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8016448541873897116, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
       propertyPath: m_fontSizeBase
-      value: 150
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 8016448541873897116, guid: a8018790b59a2e642aca97dfed3908f2, type: 3}
       propertyPath: m_sharedMaterial
@@ -11705,7 +11705,6 @@ MonoBehaviour:
   spawnPosition:
   - {fileID: 214809904}
   playerObject: {fileID: 1881620441}
-  playerOVRObject: {fileID: 1881620441}
   playerOVR: {fileID: 924961093}
   targetPostion: {fileID: 1455182767}
 --- !u!4 &1455182769

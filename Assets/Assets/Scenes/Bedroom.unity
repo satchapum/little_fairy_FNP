@@ -173,7 +173,6 @@ MonoBehaviour:
   - {fileID: 424526414}
   - {fileID: 1755324497}
   playerObject: {fileID: 82690788}
-  playerOVRObject: {fileID: 82690788}
   playerOVR: {fileID: 82690787}
   targetPostion: {fileID: 40858792}
 --- !u!1 &71004938
@@ -450,6 +449,14 @@ PrefabInstance:
     - target: {fileID: 826636846023930746, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5462330666577590105, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5462330666582783859, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9005311846688391821, guid: a6eb154494039684d9636a089a4bd0b5, type: 3}
       propertyPath: m_Name
