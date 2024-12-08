@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: Daily Task
   productName: little_fairy_and_daily_life
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -157,7 +157,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.DefaultCompany.little-fairy-and-daily-life
+    Standalone: com.Daily-Task.little-fairy-and-daily-life
   buildNumber:
     Standalone: 0
     VisionOS: 0
