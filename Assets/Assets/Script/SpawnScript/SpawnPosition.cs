@@ -39,7 +39,7 @@ public class SpawnPosition : Singleton<SpawnPosition>
     void Update() 
     {
         Debug.Log(playerObject.transform.position);
-        if (((playerObject.transform.position.x != targetPostion.transform.position.x) || (playerObject.transform.position.y != targetPostion.transform.position.y)) && timeTosetPosition < 1) 
+        if (((playerObject.transform.position.x != targetPostion.transform.position.x) || (playerObject.transform.position.y != targetPostion.transform.position.y)) && timeTosetPosition < 10) 
         {
             timeTosetPosition++;
             playerOVR.enabled = false;

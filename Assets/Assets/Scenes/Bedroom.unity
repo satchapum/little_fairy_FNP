@@ -173,7 +173,6 @@ MonoBehaviour:
   - {fileID: 424526414}
   - {fileID: 1755324497}
   playerObject: {fileID: 82690788}
-  playerOVRObject: {fileID: 82690788}
   playerOVR: {fileID: 82690787}
   targetPostion: {fileID: 40858792}
 --- !u!1 &71004938
@@ -2161,7 +2160,7 @@ Transform:
   m_GameObject: {fileID: 424526414}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.041, y: 1.3, z: 0.191}
+  m_LocalPosition: {x: -0.739, y: 1.3, z: 0.206}
   m_LocalScale: {x: 0.14263, y: 0.14263, z: 0.14263}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8241,7 +8240,7 @@ Transform:
   m_GameObject: {fileID: 1755324497}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.292, y: 1.3, z: -1.927}
+  m_LocalPosition: {x: -0.276, y: 1.3, z: -1.637}
   m_LocalScale: {x: 0.14263, y: 0.14263, z: 0.14263}
   m_ConstrainProportionsScale: 0
   m_Children: []
