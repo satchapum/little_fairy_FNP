@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEditor.Audio;
 public class TutorialSoundManager : Singleton<TutorialSoundManager>
 {
     [SerializeField] AudioSource soundSource;
