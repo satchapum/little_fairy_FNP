@@ -74,40 +74,49 @@ public class TutorialSoundManager : Singleton<TutorialSoundManager>
 
     public void KitchenForDoJobTutorial()
     {
+        Debug.Log($"Scene: {SceneManager.GetActiveScene().name}, MiniGame: {GameManager.Instance.currentPlayerMiniGame}");
+
+        AudioClip selectedClip = null;
+
         if (GameManager.Instance.currentPlayerMiniGame == 2)
         {
-            Debug.Log("2"+arrangeFruitTutorialSound[currentNumberOfSoundTrack]);
-            soundSource.clip = arrangeFruitTutorialSound[currentNumberOfSoundTrack];
-            soundSource.Play();
-            currentNumberOfSoundTrack++;
-            if (currentNumberOfSoundTrack >= arrangeFruitTutorialSound.Count)
-            {
-                currentNumberOfSoundTrack = 0;
-            }
+            Debug.Log("Playing Arrange Fruit Sound");
+            selectedClip = arrangeFruitTutorialSound[currentNumberOfSoundTrack];
         }
         else if (GameManager.Instance.currentPlayerMiniGame == 3)
         {
-            Debug.Log("3" + eatGruelTutorialSound[currentNumberOfSoundTrack]);
-            soundSource.clip = eatGruelTutorialSound[currentNumberOfSoundTrack];
-            soundSource.Play();
-            currentNumberOfSoundTrack++;
-            if (currentNumberOfSoundTrack >= eatGruelTutorialSound.Count)
-            {
-                currentNumberOfSoundTrack = 0;
-            }
+            Debug.Log("Playing Eat Gruel Sound");
+            selectedClip = eatGruelTutorialSound[currentNumberOfSoundTrack];
         }
         else if (GameManager.Instance.currentPlayerMiniGame == 4)
         {
-            Debug.Log("4" + dishWashTutorialSound[currentNumberOfSoundTrack]);
-            soundSource.clip = dishWashTutorialSound[currentNumberOfSoundTrack];
+            Debug.Log("Playing Dish Wash Sound");
+            selectedClip = dishWashTutorialSound[currentNumberOfSoundTrack];
+        }
+        else
+        {
+            Debug.LogWarning("Unhandled MiniGame ID: " + GameManager.Instance.currentPlayerMiniGame);
+            return;
+        }
+
+        if (selectedClip != null)
+        {
+            soundSource.clip = selectedClip;
             soundSource.Play();
-            currentNumberOfSoundTrack++;
-            if (currentNumberOfSoundTrack >= dishWashTutorialSound.Count)
-            {
-                currentNumberOfSoundTrack = 0;
-            }
+            Debug.Log("Now playing: " + soundSource.clip.name);
+            IncrementSoundTrackIndex(selectedClip);
         }
     }
+
+    void IncrementSoundTrackIndex(AudioClip currentClip)
+    {
+        currentNumberOfSoundTrack++;
+        if (currentNumberOfSoundTrack >= currentClip.length)
+        {
+            currentNumberOfSoundTrack = 0;
+        }
+    }
+
 
     void GardenForDoJobTutorial()
     {
