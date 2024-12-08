@@ -12,6 +12,7 @@ public class FadeScene : MonoBehaviour
     //[SerializeField] string sceneToChangeName;
     [SerializeField] PlayerSO playerSO;
     [SerializeField] GameObject poseToGoNextObject;
+    [SerializeField] bool isChangingScene = false;
 
     public GameObject poseToHide;
     private Tween fadeTween;
@@ -22,8 +23,13 @@ public class FadeScene : MonoBehaviour
     }
     public void DoFadeAndChangeScene()
     {
-        GameManager.Instance.ChangeMiniGame();
-        StartFade();
+        if (isChangingScene == false)
+        {
+            isChangingScene = true;
+            GameManager.Instance.ChangeMiniGame();
+            StartFade();
+        }
+        
     }
 
 
@@ -59,9 +65,13 @@ public class FadeScene : MonoBehaviour
         StartCoroutine(DoWhenMainMenu("Bedroom"));
     }
     public void DoFadeAndChangeSceneBedRoomMenuForNextGameLevel()
-    { 
-        GameManager.Instance.ChangeMiniGame();
-        StartCoroutine(DoWhenFade("Bedroom"));
+    {
+        if (isChangingScene == false)
+        {
+            isChangingScene = true;
+            GameManager.Instance.ChangeMiniGame();
+            StartCoroutine(DoWhenFade("Bedroom"));
+        }
     }
 
     public void FadeIn(float duration)
