@@ -38,7 +38,6 @@ public class SpawnPosition : Singleton<SpawnPosition>
     }
     void Update() 
     {
-        Debug.Log(playerObject.transform.position);
         if (((playerObject.transform.position.x != targetPostion.transform.position.x) || (playerObject.transform.position.y != targetPostion.transform.position.y)) && timeTosetPosition < 10) 
         {
             timeTosetPosition++;
