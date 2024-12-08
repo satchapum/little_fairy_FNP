@@ -16,6 +16,7 @@ public class EatGameManager : Singleton<EatGameManager>
     [SerializeField] int numberOfSoundplayAndSetObject;
     void Start()
     {
+        Debug.Log(isThisMiniGameFinish +"  " + isEatStateFinish);
         TutorialSoundManager.Instance.KitchenForDoJobTutorial();
         grabblePlate.SetActive(false);
         inGrabblePlate.SetActive(true);
@@ -28,6 +29,7 @@ public class EatGameManager : Singleton<EatGameManager>
         {
             if (numberOfSoundplayAndSetObject == 0)
             {
+                Debug.Log(isThisMiniGameFinish + "  " + isEatStateFinish);
                 numberOfSoundplayAndSetObject++;
                 TutorialSoundManager.Instance.KitchenForDoJobTutorial();
                 canvasShowFinish.text = "นําจานไปวางที่ซิงค์ล้างจาน";
@@ -41,6 +43,7 @@ public class EatGameManager : Singleton<EatGameManager>
 
         if (isThisMiniGameFinish)
         {
+            Debug.Log(isThisMiniGameFinish + "  " + isEatStateFinish);
             poseToGoNextObject.SetActive(true);
             canvasShowFinish.text = "ผ่านแล้ว";
         }
