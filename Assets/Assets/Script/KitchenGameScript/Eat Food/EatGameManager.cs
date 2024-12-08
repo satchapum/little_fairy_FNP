@@ -5,8 +5,8 @@ using TMPro;
 
 public class EatGameManager : Singleton<EatGameManager>
 {
-    [SerializeField] public bool isThisMiniGameFinish;
-    [SerializeField] public bool isEatStateFinish;
+    [SerializeField] public bool isThisMiniGameFinish = false;
+    [SerializeField] public bool isEatStateFinish = false;
     [SerializeField] GameObject poseToGoNextObject;
     [SerializeField] TMP_Text canvasShowFinish;
 
@@ -16,7 +16,7 @@ public class EatGameManager : Singleton<EatGameManager>
     [SerializeField] int numberOfSoundplayAndSetObject;
     void Start()
     {
-        TutorialSoundManager.Instance.KitchenForDoJobTutorial();
+        TutorialSoundManager.Instance.CheckCurrentScene();
         grabblePlate.SetActive(false);
         inGrabblePlate.SetActive(true);
     }
@@ -29,7 +29,7 @@ public class EatGameManager : Singleton<EatGameManager>
             if (numberOfSoundplayAndSetObject == 0)
             {
                 numberOfSoundplayAndSetObject++;
-                TutorialSoundManager.Instance.KitchenForDoJobTutorial();
+                TutorialSoundManager.Instance.CheckCurrentScene();
                 canvasShowFinish.text = "นําจานไปวางที่ซิงค์ล้างจาน";
                 grabblePlate.SetActive(true);
                 inGrabblePlate.SetActive(false);

@@ -67,7 +67,7 @@ public class SpongeRayCast : Singleton<SpongeRayCast>
             ChangeSpongeModelToSoapAndWet();
 
             //Add Audio Here
-            TutorialSoundManager.Instance.KitchenForDoJobTutorial();
+            TutorialSoundManager.Instance.CheckCurrentScene();
         }
     }
 
