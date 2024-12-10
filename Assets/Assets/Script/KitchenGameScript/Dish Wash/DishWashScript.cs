@@ -4,7 +4,7 @@ using UnityEngine;
 using CodeMonkey.Utils;
 using TMPro;
 
-public class DishWashScript : MonoBehaviour
+public class DishWashScript : Singleton<DishWashScript>
 {
     [Header("In this game object")]
     [SerializeField] private Texture2D _dirtMaskBase;
@@ -48,8 +48,8 @@ public class DishWashScript : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(spongeRayCast.isHit + "  :  " + spongeRayCast.hitObject);
-        if (spongeRayCast.isHit && spongeRayCast.hitObject == this.gameObject)
+        Debug.Log(spongeRayCast.isHit + "  :  " + spongeRayCast.hitObject.name + " : " + this.gameObject.name);
+        if (spongeRayCast.isHit && (SpongeRayCast.Instance.hitObject == this.gameObject))
         {
             Debug.Log("Do delete texture");
             Vector2 textureCoord = spongeRayCast.hitOut.textureCoord;
