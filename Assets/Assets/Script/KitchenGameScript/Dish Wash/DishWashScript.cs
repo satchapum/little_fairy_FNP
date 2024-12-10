@@ -77,32 +77,68 @@ public class DishWashScript : MonoBehaviour
 
     private void ApplyBrush(int pixelX, int pixelY)
     {
+        Debug.Log($"Applying brush at PixelX: {pixelX}, PixelY: {pixelY}");
+
+        // Half-width and height of the brush
         int brushHalfWidth = _brush.width / 2;
         int brushHalfHeight = _brush.height / 2;
+        Debug.Log($"Brush Half Width: {brushHalfWidth}, Brush Half Height: {brushHalfHeight}");
 
+        // Calculate start and end positions for the brush application
         int startX = Mathf.Clamp(pixelX - brushHalfWidth, 0, _templateDirtMask.width);
         int startY = Mathf.Clamp(pixelY - brushHalfHeight, 0, _templateDirtMask.height);
         int endX = Mathf.Clamp(pixelX + brushHalfWidth, 0, _templateDirtMask.width);
         int endY = Mathf.Clamp(pixelY + brushHalfHeight, 0, _templateDirtMask.height);
 
+        Debug.Log($"StartX: {startX}, StartY: {startY}, EndX: {endX}, EndY: {endY}");
+
+        // Calculate brush start offsets
         int brushStartX = startX - (pixelX - brushHalfWidth);
         int brushStartY = startY - (pixelY - brushHalfHeight);
+        Debug.Log($"Brush StartX: {brushStartX}, Brush StartY: {brushStartY}");
 
+        // Calculate the width and height of the area to modify
         int width = endX - startX;
         int height = endY - startY;
+        Debug.Log($"Width: {width}, Height: {height}");
 
-        Color[] dirtMaskPixels = _templateDirtMask.GetPixels(startX, startY, width, height);
-        Color[] brushPixels = _brush.GetPixels(brushStartX, brushStartY, width, height);
-
-        for (int i = 0; i < brushPixels.Length; i++)
+        // Debug texture sizes and ensure they are readable
+        if (!_templateDirtMask.isReadable)
         {
-            float removedAmount = dirtMaskPixels[i].g * (1 - brushPixels[i].g);
-            dirtAmount -= removedAmount;
-            dirtMaskPixels[i].g *= brushPixels[i].g;  
+            Debug.LogError("_templateDirtMask is not readable. Ensure 'Read/Write Enabled' is checked.");
+            return;
+        }
+        if (!_brush.isReadable)
+        {
+            Debug.LogError("_brush is not readable. Ensure 'Read/Write Enabled' is checked.");
+            return;
         }
 
-        _templateDirtMask.SetPixels(startX, startY, width, height, dirtMaskPixels);
-        _templateDirtMask.Apply();
+        // Get pixels from the mask and brush
+        try
+        {
+            Color[] dirtMaskPixels = _templateDirtMask.GetPixels(startX, startY, width, height);
+            Color[] brushPixels = _brush.GetPixels(brushStartX, brushStartY, width, height);
+
+            Debug.Log($"Dirt Mask Pixels: {dirtMaskPixels.Length}, Brush Pixels: {brushPixels.Length}");
+
+            // Modify the pixels based on the brush
+            for (int i = 0; i < brushPixels.Length; i++)
+            {
+                float removedAmount = dirtMaskPixels[i].g * (1 - brushPixels[i].g);
+                dirtAmount -= removedAmount;
+                dirtMaskPixels[i].g *= brushPixels[i].g;
+            }
+
+            // Set the modified pixels back to the texture
+            _templateDirtMask.SetPixels(startX, startY, width, height, dirtMaskPixels);
+            _templateDirtMask.Apply();
+            Debug.Log("Brush applied successfully and texture updated.");
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError($"Error applying brush: {ex.Message}");
+        }
     }
 
 
