@@ -54,10 +54,12 @@ public class DishWashScript : MonoBehaviour
             Debug.Log(spongeRayCast.isHit + "  :  " + spongeRayCast.hitObject.name + " : " + this.gameObject.name);
             Debug.Log("Do delete texture");
             Vector2 textureCoord = spongeRayCast.hitOut.textureCoord;
-
+            Debug.Log(textureCoord);
             int pixelX = Mathf.FloorToInt(textureCoord.x * _templateDirtMask.width);
             int pixelY = Mathf.FloorToInt(textureCoord.y * _templateDirtMask.height);
-
+            Debug.Log(_templateDirtMask.width +" : ");
+            Debug.Log(_templateDirtMask.height);
+            Debug.Log("-----------------------");
             ApplyBrush(pixelX, pixelY);
         }
     }
