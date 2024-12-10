@@ -994,9 +994,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 01a9b09b7c6092646a77dc28b7a129fc, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 127768250}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 01a9b09b7c6092646a77dc28b7a129fc, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 127768249}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 01a9b09b7c6092646a77dc28b7a129fc, type: 3}
       insertIndex: -1
@@ -1029,28 +1026,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!64 &127768250
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132149147282406}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5076798556035486163, guid: 01a9b09b7c6092646a77dc28b7a129fc, type: 3}
 --- !u!114 &127768251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8360,9 +8335,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 01a9b09b7c6092646a77dc28b7a129fc, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1650315044}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 01a9b09b7c6092646a77dc28b7a129fc, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1650315043}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 01a9b09b7c6092646a77dc28b7a129fc, type: 3}
       insertIndex: -1
@@ -8415,28 +8387,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!64 &1650315044
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132147582825038}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5076798556035486163, guid: 01a9b09b7c6092646a77dc28b7a129fc, type: 3}
 --- !u!1 &1675799509
 GameObject:
   m_ObjectHideFlags: 0
@@ -12699,7 +12649,7 @@ GameObject:
   - component: {fileID: 1437633568}
   - component: {fileID: 1437633577}
   - component: {fileID: 1437633578}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Sponge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
