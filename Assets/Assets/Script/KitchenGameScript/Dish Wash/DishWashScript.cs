@@ -48,6 +48,7 @@ public class DishWashScript : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(spongeRayCast.isHit + "  :  " + spongeRayCast.hitObject);
         if (spongeRayCast.isHit && spongeRayCast.hitObject == this.gameObject)
         {
             Debug.Log("Do delete texture");
