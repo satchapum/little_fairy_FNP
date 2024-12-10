@@ -50,7 +50,7 @@ public class DishWashScript : MonoBehaviour
     {
         if (spongeRayCast.isHit && spongeRayCast.hitObject == this.gameObject)
         {
-
+            Debug.Log("Do delete texture");
             Vector2 textureCoord = spongeRayCast.hitOut.textureCoord;
 
             int pixelX = Mathf.FloorToInt(textureCoord.x * _templateDirtMask.width);
