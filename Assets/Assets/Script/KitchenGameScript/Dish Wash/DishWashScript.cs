@@ -48,9 +48,10 @@ public class DishWashScript : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(spongeRayCast.isHit + "  :  " + spongeRayCast.hitObject.name + " : " + this.gameObject.name);
+        
         if (spongeRayCast.isHit && (spongeRayCast.hitObject == this.gameObject))
         {
+            Debug.Log(spongeRayCast.isHit + "  :  " + spongeRayCast.hitObject.name + " : " + this.gameObject.name);
             Debug.Log("Do delete texture");
             Vector2 textureCoord = spongeRayCast.hitOut.textureCoord;
 
