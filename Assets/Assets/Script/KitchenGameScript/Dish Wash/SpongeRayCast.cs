@@ -41,6 +41,8 @@ public class SpongeRayCast : Singleton<SpongeRayCast>
                 hitOut = hit;
                 isHit = true;
                 hitObject = hit.collider.gameObject;
+
+                Debug.Log(hitObject);
             }
             else
             {
