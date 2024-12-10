@@ -50,6 +50,7 @@ public class DishWashScript : MonoBehaviour
     {
         if (spongeRayCast.isHit && spongeRayCast.hitObject == this.gameObject)
         {
+
             Vector2 textureCoord = spongeRayCast.hitOut.textureCoord;
 
             int pixelX = Mathf.FloorToInt(textureCoord.x * _templateDirtMask.width);
@@ -112,6 +113,7 @@ public class DishWashScript : MonoBehaviour
         _templateDirtMask.Apply();
 
         _material.SetTexture("_DirtMask", _templateDirtMask);
+        Debug.Log("Create texture complete");
     }
 
     private float GetDirtAmount()
